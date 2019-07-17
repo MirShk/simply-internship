@@ -1,37 +1,3 @@
-// 1.1
-function filterArrayByAge(arr) {
-    return new Promise((resolve, reject) => {
-        try {
-            setInterval(() => {
-                arr = arr.filter(person => person.checkAge());
-                console.log(`persons --- `, arr);
-                return resolve(arr);
-            }, 1000);
-        } catch (e) {
-            return reject(e);
-        }
-    });
-}
-
-// 1.2
-function generateRandomAgedPerson(min, max, persons) {
-    setInterval(() => {
-        const age1 = Math.round(Math.random() * (max - min) + min);
-        //const age2 = Math.round(Math.random() * (max - min) + min);
-
-        persons.push(new Person(age1, "Name"));
-        //persons.push(new Person(age2, "Name"));
-
-        filterArrayByAge(persons)
-            .then(msg => {
-                console.log(msg);
-            })
-            .catch(e => {
-                console.log(`Error:: ${e}`);
-            });
-    }, 2000);
-}
-
 class Person {
     constructor(age, name) {
         this.age = age;
@@ -51,13 +17,43 @@ class Person {
     }
 }
 
-const p1 = new Person(37, "Mike");
-const p2 = new Person(38, "Dave");
-const p3 = new Person(30, "John");
-const p4 = new Person(32, "Bill");
-const persons = [p1, p2, p3, p4];
+let instance = null;
+class People {
+    //static instance = new #People();
+    constructor(){
+        if(!instance){
+            instance = this;
+        }
 
-generateRandomAgedPerson(1, 50, persons);
+        this.peopleArray = [];
+
+        return instance;
+    }
+}
+
+function filterArrayByAge(peopleArray) {
+    setInterval(() => {
+        let people = peopleArray;
+        people = people.filter(person => person.checkAge());
+        console.log(people);
+    }, 1000);
+}
+
+function generateRandomAgedPerson(min, max, people) {
+    setInterval(() => {
+        const age = Math.round(Math.random() * (max - min) + min);
+        people.push(new Person(age, `Name${age}`));
+    }, 2000);
+}
+
+const peopleArray = new People().peopleArray;
+peopleArray.push(new Person(37, "Mike"));
+peopleArray.push(new Person(38, "Dave"));
+peopleArray.push(new Person(30, "John"));
+peopleArray.push(new Person(32, "Bill"));
+
+generateRandomAgedPerson(1, 50, peopleArray);
+filterArrayByAge(peopleArray);
 
 
 
