@@ -7,3 +7,7 @@ In this static website is used the following:
   - FlexBoxes
   - Position poroperty
   - Form
+
+### About Website
+
+Alternative of the Formula1's website. 
