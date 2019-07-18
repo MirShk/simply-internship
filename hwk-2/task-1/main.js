@@ -23,7 +23,7 @@ class People {
         this.peopleArray = peopleArray;
     }
 
-    filterArrayByAge() {
+    filterPeopleByAge() {
         setInterval(() => {
             for (let i = 0; i < this.peopleArray.length; ++i) {
                 const person = this.peopleArray[i];
@@ -67,7 +67,7 @@ class Main {
         const people = new People(peopleArray);
 
         people.generateRandomAgedPerson();
-        people.filterArrayByAge();
+        people.filterPeopleByAge();
     }
 }
 
