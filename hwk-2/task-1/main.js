@@ -2,14 +2,13 @@ class Person {
     constructor(age, name) {
         this.age = age;
         this.name = name;
-
-        setInterval(() => {
-            this.incrementAge();
-        }, 1000);
+        this.incrementAge();
     }
 
     incrementAge() {
-        return this.age++;
+        setInterval(() => {
+            return this.age++;
+        }, 1000);
     };
 
     checkAge(maxAge = 40) {
@@ -17,17 +16,15 @@ class Person {
     }
 }
 
-let instance = null;
+let PeopleInstance = null;
 class People {
-    //static instance = new #People();
     constructor(){
-        if(!instance){
-            instance = this;
+        if(!PeopleInstance){
+            PeopleInstance = this;
         }
 
         this.peopleArray = [];
-
-        return instance;
+        return PeopleInstance;
     }
 }
 
@@ -36,6 +33,7 @@ function filterArrayByAge(peopleArray) {
         let people = peopleArray;
         people = people.filter(person => person.checkAge());
         console.log(people);
+        console.log("------------------------");
     }, 1000);
 }
 
