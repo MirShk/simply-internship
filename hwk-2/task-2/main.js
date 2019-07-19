@@ -4,7 +4,7 @@ class Caesar {
     static makeDecision() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                return Math.round(Math.random()) ? resolve("kill") : resolve("not kill"); // for easy testing set `1` instead `Math.round(Math.random())`
+                return Math.round(Math.random()) ? resolve("kill") : resolve("not kill"); // for easy testing set `1` instead of `Math.round(Math.random())`
             }, 3000);
         });
     }
@@ -32,14 +32,25 @@ class Gladiator {
                 this.chooseGladiatorToAttack(gladiators)
                     .then(ind => {
                         gladiators[ind].initialHealth = gladiators[ind].health;
-                        gladiators[ind].health = +((+gladiators[ind].health - this.power).toFixed(1)); // from stackoverflow
+                        // for fixing floating point number's precision problem(from stackoverflow)
+                        gladiators[ind].health = +((+gladiators[ind].health - this.power).toFixed(1));
                         if (gladiators[ind].health >= 15 && gladiators[ind].health <= 30) {
-                            gladiators[ind].speed *= 3;
+                            gladiators[ind].speed = (gladiators[ind].speed/3).toFixed(3);
                         } else {
                             gladiators[ind].initialSpeed = gladiators[ind].speed;
+                            // for fixing floating point number's precision problem(from stackoverflow)
                             gladiators[ind].speed = +((+gladiators[ind].speed - gladiators[ind].initialSpeed * (gladiators[ind].health/gladiators[ind].initialHealth))).toFixed(2); // from stackoverflow
                         }
-                        console.log(`[${this.name}] hits [${gladiators[ind].name}] with power ${this.power} ::::::::: ${gladiators[ind].health}`);
+
+                        const text = `[${this.name}] hits [${gladiators[ind].name}] with power ${this.power}`;
+                        console.log(text);
+                        if (typeof document !== "undefined") {
+                            const div = document.createElement("DIV");
+                            const textnode = document.createTextNode(text);
+                            div.appendChild(textnode);
+                            document.getElementById("arena").appendChild(div);
+                        }
+
                         if (gladiators[ind].health <= 0) {
                             clearInterval(this.timer);
                             return resolve({gladiators, ind});
@@ -90,18 +101,33 @@ class Arena {
                 })
                 .then(decision => {
                     if (decision === "kill") {
-                        console.log(`[${gladiators[dyingId].name}] is dying`);
+                        const text = `[${gladiators[dyingId].name}] is dying`;
+                        console.log(text);
                         gladiators.map((gladiator) => {
                             console.log(gladiator.name);
                             console.log(gladiator.health);
                             console.log(gladiator.speed);
                         });
+
+                        if (typeof document !== "undefined") {
+                            const div = document.createElement("DIV");
+                            const textnode = document.createTextNode(text);
+                            div.appendChild(textnode);
+                            document.getElementById("arena").appendChild(div);
+                        }
                     } else {
                         gladiators[dyingId].health += 50;
                     }
 
                     if (Arena.getAliveGladiators(gladiators).length === 1) {
-                        console.log(`[${Arena.getAliveGladiators(gladiators)[0].name}] won the battle with health ${Arena.getAliveGladiators(gladiators)[0].health}`);
+                        const text1 = `[${Arena.getAliveGladiators(gladiators)[0].name}] won the battle with health ${Arena.getAliveGladiators(gladiators)[0].health}`;
+                        console.log(text1);
+                        if (typeof document !== "undefined") {
+                            const div1 = document.createElement("DIV");
+                            const textnode = document.createTextNode(text1);
+                            div1.appendChild(textnode);
+                            document.getElementById("arena").appendChild(div1);
+                        }
                         return 0;
                     } else {
                         return battleStatusLogger(Arena.getAliveGladiators(gladiators));
