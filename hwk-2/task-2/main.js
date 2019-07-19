@@ -1,11 +1,10 @@
-//const faker = require('faker');
-document.getElementById("arena").append("sadsa");
-//todo :: singleton
+const faker = require('faker');
+
 class Caesar {
     static makeDecision() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                return /*Math.round(Math.random())*/1 ? resolve("kill") : resolve("not kill");
+                return Math.round(Math.random()) ? resolve("kill") : resolve("not kill"); // for easy testing set `1` instead `Math.round(Math.random())`
             }, 3000);
         });
     }
@@ -19,8 +18,7 @@ class Gladiators {
 
 class Gladiator {
     constructor() {
-        this.name = "sadsad sadasd sdas";
-
+        this.name = faker.name.findName();
         this.initialHealth = this.generateRandomNumInRangeWithPrecision(20, 30, 1);
         this.initialSpeed = this.generateRandomNumInRangeWithPrecision(1000, 5000, 0.001);
         this.health = this.initialHealth;
@@ -33,11 +31,13 @@ class Gladiator {
             this.timer = setInterval(() => {
                 this.chooseGladiatorToAttack(gladiators)
                     .then(ind => {
+                        gladiators[ind].initialHealth = gladiators[ind].health;
                         gladiators[ind].health = +((+gladiators[ind].health - this.power).toFixed(1)); // from stackoverflow
                         if (gladiators[ind].health >= 15 && gladiators[ind].health <= 30) {
                             gladiators[ind].speed *= 3;
                         } else {
-                            gladiators[ind].speed = gladiators[ind].initialSpeed * (gladiators[ind].health/gladiators[ind].initialHealth);
+                            gladiators[ind].initialSpeed = gladiators[ind].speed;
+                            gladiators[ind].speed = +((+gladiators[ind].speed - gladiators[ind].initialSpeed * (gladiators[ind].health/gladiators[ind].initialHealth))).toFixed(2); // from stackoverflow
                         }
                         console.log(`[${this.name}] hits [${gladiators[ind].name}] with power ${this.power} ::::::::: ${gladiators[ind].health}`);
                         if (gladiators[ind].health <= 0) {
@@ -77,7 +77,7 @@ class Arena {
         let gladiators = new Gladiators().gladiatorsArray;
         gladiators.push(g1, g2, g3);
 
-        const battle = (gladiators) => {
+        const battleStatusLogger = (gladiators) => {
             let dyingId;
             Arena.startBattle(gladiators)
                 .then((gladiatorsData) => {
@@ -94,8 +94,8 @@ class Arena {
                         gladiators.map((gladiator) => {
                             console.log(gladiator.name);
                             console.log(gladiator.health);
+                            console.log(gladiator.speed);
                         });
-
                     } else {
                         gladiators[dyingId].health += 50;
                     }
@@ -104,11 +104,11 @@ class Arena {
                         console.log(`[${Arena.getAliveGladiators(gladiators)[0].name}] won the battle with health ${Arena.getAliveGladiators(gladiators)[0].health}`);
                         return 0;
                     } else {
-                        return battle(Arena.getAliveGladiators(gladiators));
+                        return battleStatusLogger(Arena.getAliveGladiators(gladiators));
                     }
                 });
         };
-        battle(gladiators);
+        battleStatusLogger(gladiators);
     }
 
     static getAliveGladiators(gladiators) {
@@ -130,7 +130,6 @@ class Arena {
         return new Promise((resolve, reject) => {
             gladiators.map(gladiator => {
                 clearInterval(gladiator.timer);
-
                 return resolve("cleared");
             });
         });
