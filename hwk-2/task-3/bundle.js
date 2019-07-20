@@ -70658,7 +70658,7 @@ class Caesar {
     static makeDecision() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                return Math.round(Math.random()) ? resolve("kill") : resolve("not kill"); // for easy testing set `1` instead of `Math.round(Math.random())`
+                return 1 ? resolve("kill") : resolve("not kill"); // for easy testing set `1` instead of `Math.round(Math.random())`
             }, 3000);
         });
     }
@@ -70754,6 +70754,7 @@ class Arena {
                     if (decision === "kill") {
                         const text = `[${gladiators[dyingId].name}] is dying`;
                         console.log(text);
+
                         if (typeof document !== "undefined") {
                             const div = document.createElement("DIV");
                             const textnode = document.createTextNode(text);
