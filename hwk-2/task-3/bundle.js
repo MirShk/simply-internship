@@ -70658,7 +70658,7 @@ class Caesar {
     static makeDecision() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                return 1 ? resolve("kill") : resolve("not kill"); // for easy testing set `1` instead of `Math.round(Math.random())`
+                return Math.round(Math.random()) ? resolve("kill") : resolve("not kill"); // for easy testing set `1` instead of `Math.round(Math.random())`
             }, 3000);
         });
     }
