@@ -70658,7 +70658,7 @@ class Caesar {
     static makeDecision() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                return Math.round(Math.random()) ? resolve("kill") : resolve("not kill"); // for easy testing set `1` instead of `Math.round(Math.random())`
+                return 1 ? resolve("kill") : resolve("not kill"); // for easy testing set `1` instead of `Math.round(Math.random())`
             }, 3000);
         });
     }
@@ -70685,15 +70685,12 @@ class Gladiator {
             this.timer = setInterval(() => {
                 this.chooseGladiatorToAttack(gladiators)
                     .then(ind => {
-                        gladiators[ind].initialHealth = gladiators[ind].health;
                         // for fixing floating point number's precision problem(from stackoverflow)
                         gladiators[ind].health = +((+gladiators[ind].health - this.power).toFixed(1));
                         if (gladiators[ind].health >= 15 && gladiators[ind].health <= 30) {
                             gladiators[ind].speed = (gladiators[ind].speed/3).toFixed(3);
                         } else {
-                            gladiators[ind].initialSpeed = gladiators[ind].speed;
-                            // for fixing floating point number's precision problem(from stackoverflow)
-                            gladiators[ind].speed = +((+gladiators[ind].speed - gladiators[ind].initialSpeed * (gladiators[ind].health/gladiators[ind].initialHealth))).toFixed(2); // from stackoverflow
+                            gladiators[ind].speed = (gladiators[ind].initialSpeed * (gladiators[ind].health/gladiators[ind].initialHealth)).toFixed(2);
                         }
 
                         const text = `[${this.name}] hits [${gladiators[ind].name}] with power ${this.power}`;
@@ -70757,12 +70754,6 @@ class Arena {
                     if (decision === "kill") {
                         const text = `[${gladiators[dyingId].name}] is dying`;
                         console.log(text);
-                        gladiators.map((gladiator) => {
-                            console.log(gladiator.name);
-                            console.log(gladiator.health);
-                            console.log(gladiator.speed);
-                        });
-
                         if (typeof document !== "undefined") {
                             const div = document.createElement("DIV");
                             const textnode = document.createTextNode(text);
