@@ -70689,7 +70689,6 @@ class Gladiator {
 
                 if (gladiators[ind].health > 0) {
                     gladiators[ind].speed = (gladiators[ind].initialSpeed * (gladiators[ind].health/gladiators[ind].initialHealth)).toFixed(2);
-                    console.log("speees", gladiators[ind].speed);
                     if (gladiators[ind].health >= 15 && gladiators[ind].health <= 30) {
                         gladiators[ind].speed = (gladiators[ind].speed/3).toFixed(3);
                     }
