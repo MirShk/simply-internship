@@ -1,10 +1,5 @@
-const faker = require('faker');
-const stdin = process.openStdin();
 
-const START_BATTLE = "type `start()` to start the battle";
-typeof document !== "undefined"
-        ? document.createElement("DIV").appendChild(document.createTextNode(START_BATTLE))
-        : console.log(START_BATTLE);
+const START_BATTLE = "type 'start()' to start the battle";
 
 class Caesar {
     static makeDecision() {
@@ -24,7 +19,7 @@ class Gladiators {
 
 class Gladiator {
     constructor() {
-        this.name = faker.name.findName();
+        this.name = typeof document !== "undefined" ? faker.name.findName() : require('faker').name.findName();
         this.initialHealth = this.generateRandomNumInRangeWithPrecision(20, 30, 1);
         this.initialSpeed = this.generateRandomNumInRangeWithPrecision(1000, 5000, 0.001);
         this.health = this.initialHealth;
@@ -156,12 +151,25 @@ class Arena {
     }
 }
 
-stdin.addListener("data", function(input) {
-    if (input.toString().trim() === "start()") {
-        Arena.init();
-    } else {
-        console.log(START_BATTLE);
-    }
-});
+
+const start = function () {
+    Arena.init();
+};
+
+if (typeof document !== "undefined") {
+    const startBattleTextNode = document.createElement("DIV").appendChild(document.createTextNode(START_BATTLE));
+    document.getElementById("arena").appendChild(startBattleTextNode);
+} else {
+    const stdin = process.openStdin();
+    console.log(START_BATTLE);
+    stdin.addListener("data", function(input) {
+        if (input.toString().trim() === "start()") {
+            start();
+        } else {
+            console.log(START_BATTLE);
+        }
+    });
+}
+
 
 
