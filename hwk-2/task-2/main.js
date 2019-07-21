@@ -29,47 +29,39 @@ class Gladiator {
     attack(gladiators) {
         return new Promise((resolve, reject) => {
             this.timer = setInterval(() => {
-                this.chooseGladiatorToAttack(gladiators)
-                    .then(ind => {
-                        // for fixing floating point number's precision problem(from stackoverflow)
-                        gladiators[ind].health = +((+gladiators[ind].health - this.power).toFixed(1));
-                        if (gladiators[ind].health >= 15 && gladiators[ind].health <= 30) {
-                            gladiators[ind].speed = (gladiators[ind].speed/3).toFixed(3);
-                        } else {
-                            gladiators[ind].speed = (gladiators[ind].initialSpeed * (gladiators[ind].health/gladiators[ind].initialHealth)).toFixed(2);
-                        }
+                const ind = this.chooseGladiatorToAttack(gladiators);
+                // for fixing floating point number's precision problem(from stackoverflow)
+                gladiators[ind].health = +((+gladiators[ind].health - this.power).toFixed(1));
+                if (gladiators[ind].health >= 15 && gladiators[ind].health <= 30) {
+                    gladiators[ind].speed = (gladiators[ind].speed/3).toFixed(3);
+                } else {
+                    gladiators[ind].speed = (gladiators[ind].initialSpeed * (gladiators[ind].health/gladiators[ind].initialHealth)).toFixed(2);
+                }
 
-                        const text = `[${this.name}] hits [${gladiators[ind].name}] with power ${this.power}`;
-                        console.log(text);
-                        if (typeof document !== "undefined") {
-                            const div = document.createElement("DIV");
-                            const textnode = document.createTextNode(text);
-                            div.appendChild(textnode);
-                            document.getElementById("arena").appendChild(div);
-                        }
+                const text = `[${this.name}] hits [${gladiators[ind].name}] with power ${this.power}`;
+                console.log(text);
+                if (typeof document !== "undefined") {
+                    const div = document.createElement("DIV");
+                    const textnode = document.createTextNode(text);
+                    div.appendChild(textnode);
+                    document.getElementById("arena").appendChild(div);
+                }
 
-                        if (gladiators[ind].health <= 0) {
-                            clearInterval(this.timer);
-                            return resolve({gladiators, ind});
-                        }
-                    })
-                    .catch(() => {});
+                if (gladiators[ind].health <= 0) {
+                    clearInterval(this.timer);
+                    return resolve({gladiators, ind});
+                }
             }, this.speed);
         });
     }
 
     chooseGladiatorToAttack(gladiators) {
-        return new Promise((resolve, reject) => {
-            this.chooseGladTimer = setInterval(() => {
-                const randGladInd = Math.round(this.generateRandomNumInRangeWithPrecision(0, gladiators.length - 2));
-                if (gladiators[randGladInd].name !== this.name) {
-                    clearInterval(this.chooseGladTimer);
-                    resolve(randGladInd);
-                } else {
-                    reject("Can't attack myself!");
-                }
-            });
-        });
+        while (true) {
+            const randGladInd = Math.round(this.generateRandomNumInRangeWithPrecision(0, gladiators.length - 2));
+            if (gladiators[randGladInd].name !== this.name) {
+                return randGladInd;
+            }
+        }
     }
 
     generateRandomNumInRangeWithPrecision(min, max, step = 1) {
@@ -148,8 +140,9 @@ class Arena {
         return new Promise((resolve, reject) => {
             gladiators.map(gladiator => {
                 clearInterval(gladiator.timer);
-                return resolve("cleared");
             });
+
+            return resolve("Battle is stopped!");
         });
     }
 }
