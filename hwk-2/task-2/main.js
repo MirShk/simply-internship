@@ -1,4 +1,10 @@
 const faker = require('faker');
+const stdin = process.openStdin();
+
+const START_BATTLE = "type `start()` to start the battle";
+typeof document !== "undefined"
+        ? document.createElement("DIV").appendChild(document.createTextNode(START_BATTLE))
+        : console.log(START_BATTLE);
 
 class Caesar {
     static makeDecision() {
@@ -150,5 +156,12 @@ class Arena {
     }
 }
 
+stdin.addListener("data", function(input) {
+    if (input.toString().trim() === "start()") {
+        Arena.init();
+    } else {
+        console.log(START_BATTLE);
+    }
+});
 
-Arena.init();
+
