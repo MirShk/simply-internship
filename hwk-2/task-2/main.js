@@ -33,7 +33,6 @@ class Gladiator {
                 const ind = this.chooseGladiatorToAttack(gladiators);
                 // for fixing floating point number's precision problem(from stackoverflow)
                 gladiators[ind].health = +((+gladiators[ind].health - this.power).toFixed(1));
-
                 if (gladiators[ind].health > 0) {
                     gladiators[ind].speed = (gladiators[ind].initialSpeed * (gladiators[ind].health/gladiators[ind].initialHealth)).toFixed(2);
                     if (gladiators[ind].health >= 15 && gladiators[ind].health <= 30) {
@@ -42,7 +41,6 @@ class Gladiator {
                 }
 
                 const text = `[${this.name}] hits [${gladiators[ind].name}] with power ${this.power}`;
-
                 console.log(text);
                 if (typeof document !== "undefined") {
                     const div = document.createElement("DIV");
@@ -130,14 +128,12 @@ class Arena {
     }
 
     static startBattle(gladiators) {
-        return new Promise((resolve, reject) => {
-            gladiators.map((gladiator) => {
-                gladiator.attack(gladiators)
-                    .then((glads) => {
-                        return resolve(glads);
-                    })
-            });
+        let activeGladiators = [];
+        gladiators.map((gladiator) => {
+            activeGladiators.push(gladiator.attack(gladiators));
         });
+
+        return Promise.race(activeGladiators);
     }
 
     static stopBattle(gladiators) {
