@@ -5,8 +5,8 @@ class promisifyHelper {
     static promisify(func) {
         return function () {
             return new Promise((resolve, reject) => {
-                func(...arguments, (err, fileData) => {
-                    return err ? reject(err) : resolve(fileData);
+                func(...arguments, (err, data) => {
+                    return err ? reject(err) : resolve(data);
                 });
             });
         }
