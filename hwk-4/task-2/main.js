@@ -1,58 +1,43 @@
 const promisify = require('promisify-mirshk');
 const fs = require('fs');
-//const readdirSync = promisify(fs.readdirSync);
 
 class FileTree {
     constructor() {
-        this.threeDecorateDepth = 1;
-        this.flag = false;
-        this.ttt = new Set();
+        this.readdirSync = promisify(fs.readdir);
     }
 
-    readTree(dnm) {
-        return new Promise((rs, rej) => {
-            const dirs =  fs.readdirSync(dnm, { withFileTypes: true });
-            const files = dirs.filter(dir => !dir.isDirectory()).map(file => file.name);
-            const subDirs = dirs.filter(dir => dir.isDirectory()).map(subDir => subDir.name);
+     async * readDirSync(dir) {
+         const subFiles = await this.readdirSync(dir, { withFileTypes: true });
+         for (const sf of subFiles) {
+             if (sf.isDirectory()) {
+                 yield `${dir}/${sf.name}`;
+                 yield *this.readDirSync(`${dir}/${sf.name}`);
+             } else {
+                 yield `${dir}/${sf.name}`;
+             }
+         }
+    }
 
-            files.map(file => {
-                const splitter = this.threeDecorateDepth === 1 ? "" :  " ".repeat(this.threeDecorateDepth);
-                //console.log(`${splitter} ${file}`);
+    printDirAsync(iterable) {
+        const paths = [];
+        (async () => {
+            for await (const i of iterable) {
+                paths.push(i);
+            }
+
+            paths.sort((a, b) => {
+               return a.length - b.length;
             });
-
-            //console.log(subDirs);
-            if (subDirs.length) {
-                this.ttt.add({[dnm] : subDirs});
-            }
-
-            if (subDirs.length) {
-                subDirs.map(subDir => {
-                    //let splitter = "-".repeat(this.threeDecorateDepth);
-                    this.readTree(`${dnm}/${subDir}`);
-                });
-
-                ++this.threeDecorateDepth;
-            }
-
-            if (!subDirs.length) {
-                return rs(this.ttt);
-            }
-        });
-
+            console.log(paths);
+            return paths;
+        })();
     }
 
 
-    generateTree() {
-        this.readTree(__dirname)
-            .then(d => {
-                console.log(d)
-            })
-            .catch(err => {
-                console.log(err);
-            })
-
-    }
 }
 
 const ft = new FileTree();
-ft.generateTree();
+const dirs = ft.readDirSync(__dirname);
+ft.printDirAsync(dirs);
+
+
