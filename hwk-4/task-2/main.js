@@ -26,8 +26,11 @@ class FileTree {
             }
 
             paths.sort((a, b) => {
-               return a.length - b.length;
+                let p1 = a.slice(0, a.lastIndexOf("/"));
+                let p2 = b.slice(0, b.lastIndexOf("/"));
+                return p1.length - p2.length;
             });
+
             console.log(paths);
             return paths;
         })();
