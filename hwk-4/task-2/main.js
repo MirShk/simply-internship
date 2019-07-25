@@ -4,19 +4,18 @@ const fs = require('fs');
 class FileStructure {
     constructor() {
         this.readdirSync = promisify(fs.readdir);
-        this.depth = 1;
         this.splitter = "-------";
         this.modeIsTree = false;
     }
 
-    async * readDirSync(dir, depth = this.depth) {
+    async * readDirSync(dir, depth = 0) {
          const subFiles = await this.readdirSync(dir, { withFileTypes: true });
          for (const sf of subFiles) {
              if (sf.isDirectory()) {
-                 yield this.modeIsTree ? `${this.splitter.repeat(depth)}# ${sf.name}` : `${dir}/${sf.name}`;
+                 yield this.modeIsTree ? `${this.splitter.repeat(depth)}|__ ${sf.name}` : `${dir}/${sf.name}`;
                  yield *this.readDirSync(`${dir}/${sf.name}`, depth+1,);
              } else {
-                 yield this.modeIsTree ? `${this.splitter.repeat(depth)}* ${sf.name}` : `${dir}/${sf.name}`;
+                 yield this.modeIsTree ? `${this.splitter.repeat(depth)}|__/ ${sf.name}` : `${dir}/${sf.name}`;
              }
          }
     }
@@ -37,7 +36,7 @@ class FileStructure {
 
     setMode(mode) {
         if (typeof mode !== "boolean") {
-            throw Error("File Structure mode must have @boolean type");
+            throw new Error("FileStructure::setMode method receives only @boolean type argument!");
         } else {
             this.modeIsTree = mode;
             return this;
@@ -45,9 +44,9 @@ class FileStructure {
     }
 }
 
-const fstr = new FileStructure();
-const dirs = fstr.setMode(true).readDirSync(__dirname, true);
-fstr.print(dirs);
+const fileStr = new FileStructure();
+const dirs = fileStr.setMode(true).readDirSync(__dirname);
+fileStr.print(dirs);
 
 
 
