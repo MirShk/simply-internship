@@ -8,12 +8,12 @@ class FileStructure {
         this.modeIsTree = false;
     }
 
-    async * readDirSync(dir, depth = 0) {
+    async * readDir(dir, depth = 0) {
          const subFiles = await this.readdirSync(dir, { withFileTypes: true });
          for (const sf of subFiles) {
              if (sf.isDirectory()) {
                  yield this.modeIsTree ? `${this.splitter.repeat(depth)}|__ ${sf.name}` : `${dir}/${sf.name}`;
-                 yield *this.readDirSync(`${dir}/${sf.name}`, depth+1,);
+                 yield *this.readDir(`${dir}/${sf.name}`, depth+1);
              } else {
                  yield this.modeIsTree ? `${this.splitter.repeat(depth)}|__/ ${sf.name}` : `${dir}/${sf.name}`;
              }
@@ -34,7 +34,16 @@ class FileStructure {
         })();
     }
 
-    setMode(mode) {
+    /**
+     *
+     * @param mode
+     * @desc
+     * if the value of 'mode' param is true,
+     * the 'print' method will print file structure as a tree,
+     * else will print array of file paths
+     * @returns {FileStructure}
+     */
+    setPrintMode(mode) {
         if (typeof mode !== "boolean") {
             throw new Error("FileStructure::setMode method receives only @boolean type argument!");
         } else {
@@ -45,9 +54,10 @@ class FileStructure {
 }
 
 const fileStr = new FileStructure();
-const dirs = fileStr.setMode(true).readDirSync(__dirname);
+const dirs = fileStr.setPrintMode(true).readDir(__dirname);
 fileStr.print(dirs);
 
+module.exports = new FileStructure();
 
 
 
