@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h1 My route page
+
+    section#req_data
+        h4 Request params
+        ul
+            each val, key in collectedData.params
+                li=`${key} - ${val}`
+
+        h4 Request query params
+        ul
+            each val, key in collectedData.query_params
+                li=`${key} - ${val}`
+
+        h4 Request headers
+        ul
+            each val, key in collectedData.headers
+                li=`${key} - ${val}`
+
+        h4 Request cookies
+        ul
+            each val, key in collectedData.cookies
+                li=`${key} - ${val}`
+
+
