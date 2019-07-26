@@ -53,6 +53,10 @@ class FileStructure {
     }
 }
 
+const fstr = new FileStructure();
+fstr.setPrintMode(true);
+fstr.print(fstr.readDir(__dirname));
+
 module.exports = new FileStructure();
 
 
