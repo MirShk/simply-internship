@@ -20,18 +20,16 @@ class FileStructure {
          }
     }
 
-    print(iterable) {
+    async print(iterable) {
         const paths = [];
-        (async () => {
-            for await (const i of iterable) {
-                this.modeIsTree ? console.log(i) : paths.push(i);
-            }
+        for await (const i of iterable) {
+            this.modeIsTree ? console.log(i) : paths.push(i);
+        }
 
-            if (!this.modeIsTree) {
-                console.log(paths);
-                return paths;
-            }
-        })();
+        if (!this.modeIsTree) {
+            console.log(paths);
+            return paths;
+        }
     }
 
     /**
