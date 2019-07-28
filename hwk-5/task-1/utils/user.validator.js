@@ -1,7 +1,6 @@
 class UserValidator {
     validate(data) {
         const {username, password, gender, agree} = data;
-
         if (typeof username !== 'string' || username.length < 6) {
             return {
                 userDataIsValid: false,
@@ -23,7 +22,7 @@ class UserValidator {
             };
         }
 
-        if (agree !== 'on') {
+        if (!(agree === 'on' || agree === 'true')) {
             return {
                 userDataIsValid: false,
                 fieldName: 'agree'
