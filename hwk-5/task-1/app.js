@@ -9,14 +9,15 @@ const indexRouter = require('./app/Routes/api/index.router');
 const myRouter = require('./app/Routes/api/myroute.router');
 const formRouter = require('./app/Routes/api/form.router');
 const resultRouter = require('./app/Routes/api/results.router');
+const timeRouter = require('./app/Routes/api/time.router');
+const usersRouter = require('./app/Routes/api/users.router');
+
 
 global.envConfig = require('./config/app.env.config');
 global.app_v = envConfig.versioning.app_version;
 global.users = [];
 
 const app = express();
-
-//app.locals({});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -27,11 +28,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(currentTimeCookieSetter);
 
+//routes
 app.use('/', indexRouter(envConfig.versioning.app_version));
 app.use('/', myRouter(envConfig.versioning.app_version));
 app.use('/', formRouter(envConfig.versioning.app_version));
 app.use('/', resultRouter(envConfig.versioning.app_version));
-
+app.use('/', timeRouter(envConfig.versioning.app_version));
+app.use('/', usersRouter(envConfig.versioning.app_version));
 
 process.on('unhandledRejection', error => {
     console.log('unhandledRejection', error.message);
@@ -40,4 +43,3 @@ process.on('unhandledRejection', error => {
 app.listen(envConfig.server.port || 3000, () => {
     console.log(`The server is running on ${envConfig.server.port} port`);
 });
-
