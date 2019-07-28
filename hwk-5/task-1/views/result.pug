@@ -2,9 +2,3 @@ extends layout
 
 block content
     h1 Results page
-
-    ul#users
-        each user in users
-            div.users__list__item
-                each val, key in user
-                    li= `${key} - ${val}`
