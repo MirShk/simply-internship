@@ -1,4 +1,5 @@
 const userRepository = require('../../Http/repository/users.repository');
+const utils = require('../../../utils/user.validator');
 
 class UserController {
     getUsers(req, res) {
@@ -9,10 +10,17 @@ class UserController {
     }
 
     saveUser(req, res) {
-        userRepository.saveUser(req.body);
-        res
-            .status(200)
-            .send('An user has been saved successfully!')
+        if (utils.validate(req.body).userDataIsValid) {
+            userRepository.saveUser(req.body);
+            res
+                .status(201)
+                .send('An user has been saved successfully!');
+        } else {
+            res
+                .status(403)
+                .send(utils.validate(req.body));
+        }
+
     }
 }
 

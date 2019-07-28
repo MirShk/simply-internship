@@ -1,18 +1,21 @@
 extends layout
 
 block content
+    if error
+        h2 #{error}
+
     h1 Form page
 
     form(action="/api/v1/form" method="POST")
         p Username:
-            input(type="text" name="username" placeholder="")
+            input(type="text" name="username" placeholder="" required)
         p Password:
-            input(type="password" name="password" placeholder="")
+            input(type="password" name="password" placeholder="" required)
         p Gender:
-            input(type='radio', name='male', id='male')
+            input(type='radio', name='gender', value= "male", id='male')
             label(for='male') Male
-            input(type='radio', name='female', id='female')
+            input(type='radio', name='gender', value= "female", id='female')
             label(for='female') Female
         p Agree With:
-            input(type='checkbox', name='agree_with', id='agree_with')
+            input(type='checkbox', name='agree', id='agree')
         input(type="submit")
