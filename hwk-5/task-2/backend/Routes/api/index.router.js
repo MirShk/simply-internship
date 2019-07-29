@@ -3,8 +3,6 @@ const router = express.Router();
 const indexController = require('../../Http/controllers/index.controller');
 
 module.exports = (app_v = 'v1') => {
-    console.log(app_v);
-
     const baseUrl = `/api/${app_v}`;
 
     router.get(`${baseUrl}/get-todo-list`, indexController.getTodoList);
