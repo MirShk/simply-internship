@@ -1,15 +1,15 @@
 const appConfig = require('../../../config/app.env.config');
 
 module.exports = (app_v = appConfig.versioning.app_version) => {
-    const baseUrl = `http://localhost:${appConfig.server.port}/api/${app_v}`;
-    const EDIT = `${baseUrl}/edit`;
-    const ADD_TODO_ITEM = `${baseUrl}/add`;
-    const EDIT_TODO_ITEM = `${baseUrl}/edit/:key`;
-    const DELETE_TODO_ITEM = `${baseUrl}/delete`;
-    const GET_TODO_LIST = `${baseUrl}/get-todo-list`;
+    const BASE_URL = `http://localhost:${appConfig.server.port}/api/${app_v}`;
+    const EDIT = `${BASE_URL}/edit`;
+    const ADD_TODO_ITEM = `${BASE_URL}/add`;
+    const EDIT_TODO_ITEM = `${BASE_URL}/edit/:key`;
+    const DELETE_TODO_ITEM = `${BASE_URL}/delete`;
+    const GET_TODO_LIST = `${BASE_URL}/get-todo-list`;
 
     return {
-        baseUrl,
+        BASE_URL,
         EDIT,
         ADD_TODO_ITEM,
         EDIT_TODO_ITEM,
