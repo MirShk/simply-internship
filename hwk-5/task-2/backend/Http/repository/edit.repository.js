@@ -1,15 +1,12 @@
+const todoList = require('../DataBase/todoItems');
+
 class EditRepository {
-    renderEdit(itemId) {
-
-    }
-
-    editTodoItem(key, value) {
+    editTodoItem(value, key) {
         return new Promise((resolve, reject) => {
-            for (let i = 0; i < globals.todoList.length; ++i)  {
-                if (globals.todoList[i].key == key) {
-                    globals.todoList[i].value = value;
-
-                    resolve(globals.todoList);
+            for (let i = 0; i < todoList.length; ++i)  {
+                if (todoList[i].key == key) {
+                    todoList[i].text = value;
+                    return resolve(todoList);
                 }
             }
         });

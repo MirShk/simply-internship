@@ -6,8 +6,6 @@ class TodoItems extends Component {
     }
 
     createTodoItem(item) {
-        console.log(this);
-
         return (
             <li key={item.key}>
                 {item.text}

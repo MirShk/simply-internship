@@ -2,11 +2,11 @@ const indexRepository = require('../repository/edit.repository');
 
 class EditController {
     renderEdit(req, res) {
-        res.render('edit.html');
+        res.render('index.html');
     }
 
     editTodoItem(req, res) {
-        indexRepository.editTodoItem(req.params.key, req.params.value)
+        indexRepository.editTodoItem(req.body.text, req.params.itemId)
             .then(todoList => {
                 res
                     .status(200)
