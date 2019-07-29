@@ -1,10 +1,12 @@
+const usersDB = require('../../DataBase/db.users');
+
 class UserRepository {
     getUsers() {
-        return users;
+        return usersDB.users;
     }
 
     saveUser(userData) {
-        users.push(userData);
+        usersDB.users.push(userData);
     }
 }
 

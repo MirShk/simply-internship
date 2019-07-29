@@ -15,7 +15,7 @@ const usersRouter = require('./app/Routes/api/users.router');
 
 global.envConfig = require('./config/app.env.config');
 global.app_v = envConfig.versioning.app_version;
-global.users = [];
+//global.users = [];
 
 const app = express();
 
