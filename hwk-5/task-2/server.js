@@ -22,7 +22,6 @@ app.use(express.static('./client/dist'));
 app.use('/', indexRouter(appConfig.versioning.app_version));
 app.use('/', editRouter(appConfig.versioning.app_version));
 
-
 process.on('unhandledRejection', error => {
     console.log('unhandledRejection', error.message);
 });
