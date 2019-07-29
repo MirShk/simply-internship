@@ -81,7 +81,7 @@ class App extends Component {
             text: newItem.text
         })
         .then(() => {
-            window.location = indexRouterEndpoint('v1').baseUrl;
+            window.location = indexRouterEndpoint('v1').BASE_URL;
         })
     }
 
