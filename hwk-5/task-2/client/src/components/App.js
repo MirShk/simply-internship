@@ -42,7 +42,7 @@ class App extends Component {
     addItem (e) {
         e.preventDefault();
         const newItem = this.state.currentItem;
-        //if (todoItemValidator.validate(newItem.text)) {
+        if (todoItemValidator.validate(newItem.text)) {
             newItem.key = this.state.items.length + 1;
             axios.post(indexRouterEndpoint('v1').ADD_TODO_ITEM, this.state.currentItem)
                 .then(() => {
@@ -52,24 +52,24 @@ class App extends Component {
                         currentItem: { text: '', key: '' },
                     })
                 });
-        //} else {
-           // alert('Please provide valid input');
-       // }
+        } else {
+            alert('Please provide valid input');
+       }
     };
 
     editItem(e) {
         e.preventDefault();
         const newItem = this.state.currentItem;
-        //if (todoItemValidator.validate(newItem.text)) {
+        if (todoItemValidator.validate(newItem.text)) {
             axios.put(window.location, {
                 text: newItem.text
             })
                 .then(() => {
                     window.location = indexRouterEndpoint('v1').BASE_URL;
                 })
-        // } else {
-        //     alert('Please provide valid input');
-        // }
+        } else {
+             alert('Please provide valid input');
+        }
     }
 
     deleteItem (key) {
