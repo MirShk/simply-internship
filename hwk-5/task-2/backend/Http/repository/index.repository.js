@@ -1,28 +1,17 @@
-const todoList = require('../DataBase/todoItems');
+const todoItemsModel = require('../../DB/models/todo.items.model');
 
 class IndexRepository {
     addTodo(todoItem) {
-        todoList.push(todoItem);
-        return todoList;
+        const newTodoItem = new todoItemsModel(todoItem);
+        return newTodoItem.save();
     }
 
     deleteTodo(key) {
-        return new Promise((resolve, reject) => {
-            if (!todoList.length) {
-                reject("Can't remove from empty list!!!")
-            } else {
-                for (let i = 0; i < todoList.length; ++i) {
-                    if(todoList[i].key == key) {
-                        todoList.splice(i, 1);
-                        return resolve(todoList);
-                    }
-                }
-            }
-        });
+        return todoItemsModel.deleteTodoItem(key);
     }
 
     getTodoList() {
-        return todoList;
+        return todoItemsModel.getAllTodoItems();
     }
 }
 

@@ -6,15 +6,17 @@ class EditController {
     }
 
     editTodoItem(req, res) {
-        indexRepository.editTodoItem(req.body.text, req.params.itemId)
-            .then(todoList => {
+        indexRepository.editTodoItem(req.params.itemId, req.body.text)
+            .then(response => {
                 res
                     .status(200)
-                    .send(todoList);
+                    .send(response);
             })
             .catch(err => {
+                console.log(err);
+
                 res
-                    .status(401)
+                    .status(400)
                     .send(err);
             })
     }

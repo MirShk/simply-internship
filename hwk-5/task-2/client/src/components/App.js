@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TodoList from './TodoList';
 import TodoItems from './TodoItems';
 import axios from 'axios';
+import todoItemValidator from '../../../utils/todo.item.validator'
 import indexRouterEndpoint from '../api-endpoints/index.router.endpoints';
 
 class App extends Component {
@@ -41,7 +42,7 @@ class App extends Component {
     addItem (e) {
         e.preventDefault();
         const newItem = this.state.currentItem;
-        if (newItem.text !== '') {
+        //if (todoItemValidator.validate(newItem.text)) {
             newItem.key = this.state.items.length + 1;
             axios.post(indexRouterEndpoint('v1').ADD_TODO_ITEM, this.state.currentItem)
                 .then(() => {
@@ -51,8 +52,25 @@ class App extends Component {
                         currentItem: { text: '', key: '' },
                     })
                 });
-        }
+        //} else {
+           // alert('Please provide valid input');
+       // }
     };
+
+    editItem(e) {
+        e.preventDefault();
+        const newItem = this.state.currentItem;
+        //if (todoItemValidator.validate(newItem.text)) {
+            axios.put(window.location, {
+                text: newItem.text
+            })
+                .then(() => {
+                    window.location = indexRouterEndpoint('v1').BASE_URL;
+                })
+        // } else {
+        //     alert('Please provide valid input');
+        // }
+    }
 
     deleteItem (key) {
         axios.delete(`${indexRouterEndpoint('v1').DELETE_TODO_ITEM}/${key}`)
@@ -72,17 +90,6 @@ class App extends Component {
 
     renderEdit(key) {
         window.location = `${indexRouterEndpoint('v1').EDIT}/${key}`;
-    }
-
-    editItem(e) {
-        e.preventDefault();
-        const newItem = this.state.currentItem;
-        axios.put(window.location, {
-            text: newItem.text
-        })
-        .then(() => {
-            window.location = indexRouterEndpoint('v1').BASE_URL;
-        })
     }
 
     render() {
