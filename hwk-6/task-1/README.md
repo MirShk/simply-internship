@@ -1,6 +1,6 @@
-#API ENDPOINTS
+API ENDPOINTS
 
-#USERS ENDPOINTS
+USERS ENDPOINTS
 `http://localhost:3000/api/v1/users`
 Method `POST`
 @desc create new user
@@ -16,7 +16,7 @@ Method `GET`
 @desc get users by options
 @query_params `username(1|0), sortBy, whereFieldName, whereValue`
 
-#TASKS ENDPOINTS
+TASKS ENDPOINTS
 `http://localhost:3000/api/v1/tasks`
 Method `POST`
 @desc create new task
