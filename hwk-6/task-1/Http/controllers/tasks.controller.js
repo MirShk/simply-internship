@@ -16,13 +16,7 @@ class TasksController {
     }
 
     createTask(req, res) {
-        const taskData = {
-            ...req.body,
-            created: new Date(),
-            updated: new Date(),
-        };
-
-        return tasksRepository.createTask(taskData)
+        return tasksRepository.createTask(req.body)
             .then(response => {
                 res
                     .status(201)

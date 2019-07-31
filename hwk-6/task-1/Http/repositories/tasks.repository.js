@@ -2,6 +2,12 @@ const taskModel = require('../../DB/models/tasks.model');
 
 class TasksRepository {
     createTask(taskData) {
+        taskData = {
+            ...taskData,
+            created: new Date(),
+            updated: new Date(),
+        };
+
         const newTask = new taskModel(taskData);
         return newTask.save();
     }
