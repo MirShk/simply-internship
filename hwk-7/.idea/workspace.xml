@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7793903-d28f-4d9e-ba48-aa7204e80849" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-1/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/task-1/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-1/backend/db/models/todo.items.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/task-1/backend/db/models/todo.items.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-1/backend/http/controllers/todos.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/task-1/backend/http/controllers/todos.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-1/client/src/api-endpoints/todo.router.endpoints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task-1/client/src/todo.app.js" beforeDir="false" afterPath="$PROJECT_DIR$/task-1/client/src/todo.app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-1/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/task-1/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,24 +24,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task-1/client/src/todo.app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="116" column="10" lean-forward="true" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
+            <state relative-caret-position="555">
+              <caret line="156" column="31" lean-forward="true" selection-start-line="156" selection-start-column="31" selection-end-line="156" selection-end-column="31" />
               <folding>
+                <element signature="n#!!block;n#constructor#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#getRoot#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#getTodoList#0;n#TodoApp#0" />
+                <element signature="n#!!block;n#setState#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#handleSubmit#0;n#TodoApp#0" />
+                <element signature="n#!!block;n#handleInput#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#handleEdit#0;n#TodoApp#0" />
+                <element signature="n#!!block;n#handleEdit#0;n#TodoApp#0" />
+                <element signature="n#!!block;n#handleDelete#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#componentDidMount#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#render#0;n#TodoApp#0" />
-                <element signature="n#TodoInput#0" />
                 <element signature="n#TodoItem#0" />
                 <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#TodoList#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/task-1/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -114,6 +122,7 @@
         <option value="$PROJECT_DIR$/task-1/backend/http/controllers/todos.controller.js" />
         <option value="$PROJECT_DIR$/task-1/backend/db/models/todo.items.model.js" />
         <option value="$PROJECT_DIR$/task-1/client/src/todo.app.js" />
+        <option value="$PROJECT_DIR$/task-1/.gitignore" />
       </list>
     </option>
   </component>
@@ -151,42 +160,6 @@
               <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
               <item name="task-1" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="hwk-7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hwk-7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hwk-7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hwk-7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hwk-7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -195,6 +168,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../hwk-5/task-2/client/src/components/TodoList.js" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -227,23 +201,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564642228694</updated>
-      <workItem from="1564642229861" duration="12202000" />
+      <workItem from="1564642229861" duration="12426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12202000" />
+    <option name="totallyTimeSpent" value="12426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19188192" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19188192" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.040923398" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.34837356" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -320,21 +294,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/task-1/client/src/todo.app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="116" column="10" lean-forward="true" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
+        <state relative-caret-position="555">
+          <caret line="156" column="31" lean-forward="true" selection-start-line="156" selection-start-column="31" selection-end-line="156" selection-end-column="31" />
           <folding>
+            <element signature="n#!!block;n#constructor#0;n#TodoApp#0" />
             <element signature="n#!!block;n#getRoot#0;n#TodoApp#0" />
             <element signature="n#!!block;n#getTodoList#0;n#TodoApp#0" />
+            <element signature="n#!!block;n#setState#0;n#TodoApp#0" />
             <element signature="n#!!block;n#handleSubmit#0;n#TodoApp#0" />
+            <element signature="n#!!block;n#handleInput#0;n#TodoApp#0" />
             <element signature="n#!!block;n#handleEdit#0;n#TodoApp#0" />
+            <element signature="n#!!block;n#handleEdit#0;n#TodoApp#0" />
+            <element signature="n#!!block;n#handleDelete#0;n#TodoApp#0" />
             <element signature="n#!!block;n#componentDidMount#0;n#TodoApp#0" />
             <element signature="n#!!block;n#render#0;n#TodoApp#0" />
-            <element signature="n#TodoInput#0" />
             <element signature="n#TodoItem#0" />
             <element signature="n#style#0;n#span#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#li#0;n#!!top" expanded="true" />
             <element signature="n#TodoList#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task-1/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>
