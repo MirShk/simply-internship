@@ -12,22 +12,13 @@ class TodoApp {
             buttonText : 'Add',
             currentItemId: ''
         };
-
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleInput = this.handleInput.bind(this);
-        this.handleEdit = this.handleEdit.bind(this);
-        this.setState = this.setState.bind(this);
-        this.renderEdit = this.renderEdit.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-        this.componentDidMount = this.componentDidMount.bind(this);
     }
 
-    getRoot() {
+    getRoot = () => {
         return document.getElementById('root');
-    }
+    };
 
-    getTodoList() {
+    getTodoList = () => {
         return fetch(GET_TODO_LIST)
             .then(response => {
                 return response.json();
@@ -38,41 +29,51 @@ class TodoApp {
             .catch(err => {
                 console.log(err);
             })
-    }
+    };
 
-    setState(data) {
+    setState = (data) => {
         this.state.buttonText = data.buttonText ? data.buttonText : this.state.buttonText;
         this.state.currentItemId = data.currentItemId ? data.currentItemId : this.state.currentItemId;
         this.state.todoList = data.todoList ? data.todoList : this.state.todoList;
-        this.state.input = data.input ? data.input : this.state.input;
+        this.state.input = !(data.input === null || data.input === undefined) ? data.input : this.state.input;
         this.render(data);
-    }
+    };
 
-    handleSubmit() {
+    handleSubmit = () => {
         const data = {
           text: this.state.input,
           key: this.state.todoList.length
         };
 
-        fetch(ADD_TODO_ITEM, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers:{
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => {
-            this.state.todoList.push(data);
-            this.state.input = '';
-            this.render(this.state);
-        })
-    }
+        if (data.text.replace(/\s/g, '').length) {
+            fetch(ADD_TODO_ITEM, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(() => {
+                this.setState({
+                    todoList: [...this.state.todoList, data],
+                    input: '',
+                    buttonText: 'Add'
+                });
+            })
+            .catch(err => {
+                alert(err);
+            });
+        } else {
+            alert('Please provide a valid input')
+        }
 
-    handleInput(event) {
+    };
+
+    handleInput = (event) => {
         this.state.input = event.target.value;
-    }
+    };
 
-    renderEdit(key) {
+    renderEdit = (key) => {
         const newState = {
             todoList: [],
             buttonText: 'Edit',
@@ -86,58 +87,67 @@ class TodoApp {
         });
 
 
-
         this.setState(newState);
-    }
+    };
 
-    handleEdit(key) {
+    handleEdit = (key) => {
         const data = {
             text: this.state.input,
             key:  this.state.currentItemId
         };
 
-        fetch(`${EDIT_TODO_ITEM}/${key}`, {
-            method: 'PUT',
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(()=> {
-            this.getTodoList()
-                .then(response => {
-                    this.setState({todoList: response, buttonText: 'Add'});
-                });
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }
+        if (data.text.replace(/\s/g, '').length) {
+            fetch(`${EDIT_TODO_ITEM}/${key}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(()=> {
+                    this.getTodoList()
+                        .then(response => {
+                            this.setState({todoList: response, buttonText: 'Add'});
+                        });
+                })
+                .catch(err => {
+                    alert(err);
+                })
+        } else {
+            alert('Please provide a valid input')
+        }
 
-    handleDelete(key) {
+    };
+
+    handleDelete = (key) => {
         fetch(`${DELETE_TODO_ITEM}/${key}`, {
             method: 'DELETE',
         })
         .then(()=> {
             this.getTodoList()
                 .then(response => {
-                    this.setState({todoList: response, buttonText: 'Add'});
+                    this.setState({
+                        todoList: response,
+                        buttonText: 'Add',
+                        input: '',
+                        currentItemId: ''
+                    });
                 });
         })
         .catch(err => {
             console.log(err)
         })
-    }
+    };
 
-    componentDidMount(mounted) {
+    componentDidMount = (mounted) => {
         this.getTodoList()
             .then(response => {
                 this.state.todoList = response;
                 mounted();
             });
-    }
+    };
 
-    render(data = this.state, target = this.getRoot()) {
+    render = (data = this.state, target = this.getRoot()) => {
         this.componentDidMount(() => {
             const todoList = new TodoList({
                 renderEdit: this.renderEdit,
@@ -157,17 +167,16 @@ class TodoApp {
                                  ${todoInput}
                                `;
         });
-    }
+    };
 }
 
 class TodoInput extends TodoApp {
     constructor(props) {
         super();
         this.props = props;
-        this.renderInputContainer = this.renderInputContainer.bind(this);
     }
 
-    renderInputContainer(data) {
+    renderInputContainer = (data) => {
         window.handleSubmit = data.buttonText === 'Add' ? this.props.handleSubmit : this.props.handleEdit;
         window.handleInput = this.props.handleInput;
         return `
@@ -180,9 +189,9 @@ class TodoInput extends TodoApp {
                                     />
                                     <button type="submit" onclick="handleSubmit(${data.currentItemId})">${data.buttonText}</button>
                             </div>
-                        </div>
+                    </div>
                 `
-    }
+    };
 }
 
 class TodoItem extends TodoApp {

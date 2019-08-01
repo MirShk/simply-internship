@@ -32,9 +32,6 @@ class TodosController {
     getTodoList(req, res) {
         indexRepository.getTodoList()
             .then(todoList => {
-                console.log(todoList);
-
-
                 res
                     .status(200)
                     .send(todoList);

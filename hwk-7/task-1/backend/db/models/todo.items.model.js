@@ -7,22 +7,6 @@ const todoItemSchema = new Schema({
     key  : Number
 });
 
-todoItemSchema.pre('save', function(next) {
-    if (todoItemValidator.validate(this.text)) {
-        next();
-    } else {
-        next({message: 'todo item validation is failed'});
-    }
-});
-
-todoItemSchema.pre('updateOne', function(next) {
-    if (todoItemValidator.validate(this._update.$set.text)) {
-        next();
-    } else {
-        next({message: 'todo item validation is failed'});
-    }
-});
-
 todoItemSchema.statics.getAllTodoItems = function() {
     return this.find();
 };
