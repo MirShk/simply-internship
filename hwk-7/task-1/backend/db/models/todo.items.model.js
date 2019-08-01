@@ -32,11 +32,6 @@ todoItemSchema.statics.deleteTodoItem = function(itemKey) {
 };
 
 todoItemSchema.statics.editTodoItem = function(itemKey, itemValue) {
-
-    console.log(typeof itemValue);
-
-    console.log(typeof itemKey);
-
     return this.updateOne(
             {
                 key: itemKey
