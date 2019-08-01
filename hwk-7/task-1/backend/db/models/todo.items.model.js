@@ -6,22 +6,22 @@ const todoItemSchema = new Schema({
     text : String,
     key  : Number
 });
-
-todoItemSchema.pre('save', function(next) {
-    if (todoItemValidator.validate(this.text)) {
-        next();
-    } else {
-        next({message: 'todo item validation is failed'});
-    }
-});
-
-todoItemSchema.pre('updateOne', function(next) {
-    if (todoItemValidator.validate(this._update.$set.text)) {
-        next();
-    } else {
-        next({message: 'todo item validation is failed'});
-    }
-});
+//
+// todoItemSchema.pre('save', function(next) {
+//     if (todoItemValidator.validate(this.text)) {
+//         next();
+//     } else {
+//         next({message: 'todo item validation is failed'});
+//     }
+// });
+//
+// todoItemSchema.pre('updateOne', function(next) {
+//     if (todoItemValidator.validate(this._update.$set.text)) {
+//         next();
+//     } else {
+//         next({message: 'todo item validation is failed'});
+//     }
+// });
 
 todoItemSchema.statics.getAllTodoItems = function() {
     return this.find();
@@ -32,6 +32,11 @@ todoItemSchema.statics.deleteTodoItem = function(itemKey) {
 };
 
 todoItemSchema.statics.editTodoItem = function(itemKey, itemValue) {
+
+    console.log(typeof itemValue);
+
+    console.log(typeof itemKey);
+
     return this.updateOne(
             {
                 key: itemKey

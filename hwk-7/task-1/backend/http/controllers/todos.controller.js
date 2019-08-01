@@ -48,7 +48,7 @@ class TodosController {
     }
 
     editTodoItem(req, res) {
-        indexRepository.editTodoItem(req.params.itemId, req.body.text)
+        indexRepository.editTodoItem(Number(req.params.itemKey), req.body.text)
             .then(response => {
                 res
                     .status(200)

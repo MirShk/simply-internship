@@ -1,6 +1,6 @@
 const BASE_URL = `http://localhost:3000/api/v1/todos`;
 const ADD_TODO_ITEM = `${BASE_URL}/create`;
-const EDIT_TODO_ITEM = `${BASE_URL}/edit`;
+const EDIT_TODO_ITEM = `${BASE_URL}/update`;
 const DELETE_TODO_ITEM = `${BASE_URL}/delete`;
 const GET_TODO_LIST = `${BASE_URL}/fetch`;
 
@@ -8,11 +8,18 @@ class TodoApp {
     constructor() {
         this.state = {
             input: '',
-            todoList: []
+            todoList: [],
+            buttonText : 'Add',
+            currentItemId: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.setState = this.setState.bind(this);
+        this.renderEdit = this.renderEdit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     getRoot() {
@@ -32,8 +39,15 @@ class TodoApp {
             })
     }
 
+    setState(data) {
+        this.state.buttonText = data.buttonText ? data.buttonText : this.state.buttonText;
+        this.state.currentItemId = data.currentItemId ? data.currentItemId : this.state.currentItemId;
+        this.state.todoList = data.todoList ? data.todoList : this.state.todoList;
+        this.state.input = data.input ? data.input : this.state.input;
+        this.render(data);
+    }
+
     handleSubmit() {
-        console.log(this.state.input);
         const data = {
           text: this.state.input,
           key: this.state.todoList.length
@@ -49,13 +63,61 @@ class TodoApp {
         .then(response => {
             this.state.todoList.push(data);
             this.state.input = '';
-            this.render(this.state.todoList);
+            this.render(this.state);
         })
     }
 
     handleInput(event) {
-        console.log(event.target.value);
         this.state.input = event.target.value;
+    }
+
+    renderEdit(key) {
+        this.setState({
+            input: this.state.todoList[key].text,
+            todoList: [],
+            buttonText: 'Edit',
+            currentItemId: key
+        });
+    }
+
+    handleEdit(key) {
+        const data = {
+            text: this.state.input,
+            key:  this.state.currentItemId
+        };
+
+        fetch(`${EDIT_TODO_ITEM}/${key}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(()=> {
+            this.getTodoList()
+                .then(response => {
+                    this.setState({todoList: response, buttonText: 'Add'});
+                });
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    handleDelete(key) {
+        console.log("handleDelete", key);
+        fetch(`${DELETE_TODO_ITEM}/${key}`, {
+            method: 'DELETE',
+        })
+        .then(()=> {
+            this.getTodoList()
+                .then(response => {
+                    this.setState({todoList: response, buttonText: 'Add'});
+                });
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
     componentDidMount(cb) {
@@ -67,55 +129,67 @@ class TodoApp {
     }
 
     render(data, target = this.getRoot()) {
-        const props = {
-            handleSubmit: this.handleSubmit,
-            handleInput: this.handleInput
-        };
+        const todoList = new TodoList({
+            renderEdit: this.renderEdit,
+            handleDelete: this.handleDelete
+        }).renderList(data);
 
-        target.innerHTML = `${new TodoList().renderList(data)}`;
-        target.appendChild(new TodoInput(props).renderForm());
+        const todoInput = new TodoInput({
+            handleSubmit: this.handleSubmit,
+            handleInput: this.handleInput,
+            handleEdit: this.handleEdit,
+        }).renderInputContainer(data);
+
+        target.innerHTML = `
+                                ${todoList}
+                                ${todoInput}
+                           `;
     }
 }
-
-
-
 
 class TodoInput extends TodoApp {
     constructor(props) {
         super(props);
         this.props = props;
-        this.renderForm = this.renderForm.bind(this);
+        this.renderInputContainer = this.renderInputContainer.bind(this);
     }
 
-    renderForm() {
-        const container = document.createElement("DIV");
-        const button = document.createElement("BUTTON");
-        const input = document.createElement("INPUT");
-        input.addEventListener('input', this.props.handleInput);
-        input.setAttribute('type', 'text');
-        container.className = "todo__input__container";
-        this.getRoot().appendChild(container);
-        button.innerHTML = "Add";
-        button.addEventListener('click', this.props.handleSubmit);
-        document.getElementsByClassName('todo__input__container')[0].appendChild(input);
-        document.getElementsByClassName('todo__input__container')[0].appendChild(button);
-
-        return container;
+    renderInputContainer(data) {
+        window.handleSubmit = data.buttonText === 'Add' ? this.props.handleSubmit : this.props.handleEdit;
+        window.handleInput = this.props.handleInput;
+        return `
+                    <div class="todo__list">
+                            <div class="todo__list__header">
+                                    <input
+                                           placeholder="Task"
+                                           value="${data.input ? data.input : ''}"
+                                           oninput="handleInput(event)" 
+                                    />
+                                    <button type="submit" onclick="handleSubmit(${data.currentItemId})">${data.buttonText}</button>
+                            </div>
+                        </div>
+                `
     }
 }
 
-class TodoItem {
-    constructor() {}//todo props
+class TodoItem extends TodoApp {
+    constructor(props) {
+        super();
+        this.props = props;
+    }
 
-    static renderItem(itemData) {
+    renderItem(itemData) {
+        window.renderEdit = this.props.renderEdit;
+        window.handleDelete = this.props.handleDelete;
+
         return `
-                    <li>
-                        ${itemData}
+                    <li id="${itemData.key}">
+                        ${itemData.text}
                         <span class="todo__item__button" style="margin-left: 15px">
-                            <button>edit</button>
+                            <button onclick="renderEdit(${itemData.key})">edit</button>
                         </span>
                         <span class="todo__item__button" style="margin-left: 15px">
-                            <button>delete</button>
+                            <button onclick="handleDelete(${itemData.key})">delete</button>
                         </span>
                     </li>
                 `;
@@ -123,15 +197,23 @@ class TodoItem {
 }
 
 class TodoList extends TodoApp {
-    renderList(todoData) {
-        const list = todoData.map(itemData => TodoItem.renderItem(itemData.text));
+    constructor(props) {
+        super();
+        this.props = props;
+    }
+
+    renderList(data) {
+        const list = data.todoList.map((itemData) => new TodoItem(this.props).renderItem(itemData));
         return `<ul>${list.join('')}</ul>`;
     }
 }
 
-const todoApp = new TodoApp();
 
+
+
+
+const todoApp = new TodoApp();
 todoApp
     .componentDidMount(component => {
-        component.render(component.state.todoList);
+        component.render(component.state);
     });

@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f04d99aa-92c9-4705-a1c6-90170cdb6c98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hwk-7/aaa.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/backend/db/models/todo.items.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/index.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/todos.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/backend/http/repository/todos.repository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/backend/routes/api/index.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/backend/routes/api/todos.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/client/src/api-endpoints/todo.router.endpoints.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/client/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/config/app.env.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hwk-7/task-1/utils/todo.item.validator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-    </list>
+    <list default="true" id="c811f358-0043-4492-8e85-22580eb66d10" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -32,129 +12,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
-              <folding>
-                <element signature="n#!!block;n#getTodoList#0;n#TodoApp#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwk-7/task-1/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwk-5/task-2/client/src/components/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
-              <caret line="113" column="9" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwk-5/task-2/client/src/components/TodoList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwk-5/task-2/client/src/components/TodoItems.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="23" selection-start-line="11" selection-start-column="16" selection-end-line="16" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwk-7/aaa.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Pug File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>main__</find>
-      <find>sho</find>
-      <find>.standings__main__f1_drivers_standings_section &gt; .standings__main__f1_driver</find>
-      <find>standing_info</find>
-      <find>standings__main__f1_driver</find>
-      <find>.standings__main__f1_driver_standing_info</find>
-      <find>mclaren</find>
-      <find>Mclaren</find>
-      <find>Winner is</find>
-      <find>spl</find>
-      <find>stopBattle</find>
-      <find>setI</find>
-      <find>start</find>
-      <find>collectData</find>
-      <find>app</find>
-      <find>app.</find>
-      <find>moment()</find>
-      <find>editItem</find>
-      <find>&lt;Link</find>
-      <find>loca</find>
-      <find>global.todoList</find>
-      <find>todoEntries</find>
-      <find>'v1'</find>
-      <find>indexRouterEndpoint</find>
-      <find>console.log(</find>
-      <find>console</find>
-      <find>baseUrl</find>
-      <find>base</find>
-      <find>baseU</find>
-      <find>indexController</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>main__f1_driver flex_item</replace>
-      <replace>main__f1_driver__info__name</replace>
-      <replace>350px</replace>
-      <replace>4px</replace>
-      <replace>430px</replace>
-      <replace>460px</replace>
-      <replace>main__f1_drivers_section</replace>
-      <replace>home__main__</replace>
-      <replace>standings__main__</replace>
-      <replace>standings__main__f1_drivers_standings_section__f1_driver_standing_info</replace>
-      <replace>standings__main__f1_drivers_standings_section__f1_driver</replace>
-      <replace>todosController</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/hwk-5</dir>
-      <dir>$PROJECT_DIR$/hwk-5/task-2</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -162,168 +27,186 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hwk-5/task-2/views/layout.pug" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/views/index.pug" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/render.html" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/Index.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/views/edit.pug" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/edit.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/components/Edit.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/edit.html" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/components/Main.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/components/test.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/index.html" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/components/TodoItems.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/backend/Http/DataBase/todoItems.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/backend/Http/controllers/edit.controller.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/backend/Http/controllers/index.controller.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/backend/Http/repository/index.repository.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/backend/Http/repository/edit.repository.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/webpack.config.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/config/app.env.config.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/server.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/api-endpoints/index.router.endpoints.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/backend/Routes/api/edit.router.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/components/App.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/index.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/.gitignore" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/.env.example" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/backend/Routes/api/index.router.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/.gitignore" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/config/app.env.config.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/index.html" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/api-endpoints/index.router.endpoints.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/.env.example" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/components/todo.list.component.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/components/todo.item.component.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/components/todo.form.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/components/app.wrapper.component.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/index.js" />
-        <option value="$PROJECT_DIR$/hwk-7/aaa.html" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/backend/routes/api/edit.router.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/backend/http/repository/index.repository.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/.babelrc" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/backend/routes/api/todos.router.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/backend/routes/api/index.router.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/index.controller.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/api-endpoints/todo.router.endpoints.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/index.html" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/server.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/todos.controller.js" />
-        <option value="$PROJECT_DIR$/hwk-5/task-2/client/src/components/TodoList.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/package.json" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js" />
+        <option value="$PROJECT_DIR$/hwk-2/task-1/helper/helper.js" />
+        <option value="$PROJECT_DIR$/hwk-2/package.json" />
+        <option value="$PROJECT_DIR$/hwk-2/task-1/main.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/hwk-2/task-2/main.js" />
+        <option value="$PROJECT_DIR$/hwk-4/task-2/main.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="335" />
-    <option name="y" value="153" />
-    <option name="width" value="1409" />
-    <option name="height" value="789" />
+    <option name="y" value="-2" />
+    <option name="width" value="1920" />
+    <option name="height" value="1082" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-6" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-6" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="db" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="db" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="http" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="repository" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="api-endpoints" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="config" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="simply-internship" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/WebstormProjects/simply-internship" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="hwk-7" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="task-1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="utils" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="8.10.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v11.10.1/bin/node" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.2.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hwk-7" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v12.2.0/bin/node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
-  </component>
-  <component name="ReadonlyStatusHandler">
-    <option name="SHOW_DIALOG" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/hwk-7/task-1" />
-      <recent name="$PROJECT_DIR$/hwk-5/task-2" />
-      <recent name="$PROJECT_DIR$/hwk-5/task-2/backend/views" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/hwk-7/task-1/client" />
-      <recent name="$PROJECT_DIR$/hwk-7/task-1/client/src" />
-      <recent name="$PROJECT_DIR$/hwk-5/task-2/client/dist" />
-      <recent name="$PROJECT_DIR$/hwk-5/task-2/public" />
-      <recent name="$PROJECT_DIR$/hwk-5/task-2/client/src" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -337,403 +220,138 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.server">
-    <configuration default="true" type="NodeJSConfigurationType" path-to-node="$USER_HOME$/.nvm/versions/node/v11.10.1/bin/node" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/hwk-5">
-      <method v="2" />
-    </configuration>
-    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/hwk-7/task-1/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="server" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/hwk-5/task-2/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="npm.server" />
-      <item itemvalue="npm.start" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.server" />
-        <item itemvalue="npm.start" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f04d99aa-92c9-4705-a1c6-90170cdb6c98" name="Default Changelist" comment="" />
-      <created>1563287729545</created>
+      <changelist id="c811f358-0043-4492-8e85-22580eb66d10" name="Default Changelist" comment="" />
+      <created>1563438164660</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1563287729545</updated>
-      <workItem from="1563287730809" duration="262000" />
-      <workItem from="1563290277245" duration="957000" />
-      <workItem from="1563291510451" duration="2677000" />
-      <workItem from="1563302204251" duration="8168000" />
-      <workItem from="1563316052660" duration="78740000" />
-      <workItem from="1563728681676" duration="13113000" />
-      <workItem from="1563900057395" duration="1211000" />
-      <workItem from="1563901539222" duration="27022000" />
-      <workItem from="1564073382612" duration="1039000" />
-      <workItem from="1564085898122" duration="16708000" />
-      <workItem from="1564308257856" duration="9806000" />
-      <workItem from="1564333489771" duration="20511000" />
-      <workItem from="1564420241617" duration="8591000" />
-      <workItem from="1564429839032" duration="4815000" />
-      <workItem from="1564583349353" duration="17911000" />
-      <workItem from="1564612337075" duration="1496000" />
+      <updated>1563438164660</updated>
+      <workItem from="1563438165810" duration="8350000" />
+      <workItem from="1563951669696" duration="171000" />
+      <workItem from="1564127257024" duration="108000" />
+      <workItem from="1564127631888" duration="54000" />
+      <workItem from="1564127771763" duration="64000" />
+      <workItem from="1564472717590" duration="84000" />
+      <workItem from="1564642105578" duration="123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213027000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="8954000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20819671" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29309437" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3887689" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32948583" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32937366" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989071" weight="0.40604752" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010929" side_tool="true" weight="0.49460045" />
-      <window_info anchor="bottom" id="TypeScript" order="11" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32948583" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13011542" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31202185" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6166307" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32937366" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989071" weight="0.40604752" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010929" side_tool="true" weight="0.49460045" />
-      <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/backend/Http/DataBase/todoItems.js" />
+    <entry file="file://$PROJECT_DIR$/package.json" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/12.2.0/node-typings/node_modules/@types/node/fs.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405">
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwk-2/task-1/helper/helper.js" />
+    <entry file="file://$PROJECT_DIR$/hwk-2/task-1/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwk-2/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json" />
+    <entry file="file://$PROJECT_DIR$/hwk-2/task-2/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1938">
+          <caret line="4" column="27" lean-forward="true" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwk-4/task-2/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hwk-5/node_modules/express/index.js" />
+    <entry file="file://$PROJECT_DIR$/hwk-5/app.js" />
     <entry file="file://$PROJECT_DIR$/hwk-5/task-1/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/backend/Http/repository/index.repository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/backend/Http/repository/edit.repository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-1/config/app.env.config.js">
+    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/.env">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/backend/Routes/api/edit.router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="62" lean-forward="true" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/backend/Http/controllers/edit.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/client/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/config/app.env.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/client/src/api-endpoints/index.router.endpoints.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/backend/Routes/api/index.router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hwk-5/task-2/.env.example">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/db/models/todo.items.model.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/node_modules/ms/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/utils/todo.item.validator.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/hwk-5/task-2/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+        <state relative-caret-position="450">
+          <caret line="30" column="3" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/config/app.env.config.js">
+    <entry file="file://$PROJECT_DIR$/hwk-4/task-1/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/.env.example">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/components/todo.item.component.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/components/todo.form.component.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/components/todo.list.component.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/components/app.wrapper.component.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/index.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/edit.controller.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/routes/api/edit.router.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/http/repository/edit.repository.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/http/repository/todos.repository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.nvm/versions/node/v11.10.1/lib/node_modules/babel-cli/node_modules/babel-core/lib/transformation/file/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="211" column="64" selection-start-line="211" selection-start-column="64" selection-end-line="211" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/es5/todo.app.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/.babelrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="75" selection-start-column="75" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/backend/Http/controllers/index.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="49" column="33" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="49" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/index.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/dist/common.js" />
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/api-endpoints/todo.router.endpoints.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/todos.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/routes/api/todos.router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/routes/api/index.router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/client/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="113" column="9" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/client/src/components/TodoList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="64" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-5/task-2/client/src/components/TodoItems.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="23" selection-start-line="11" selection-start-column="16" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/package.json">
+    <entry file="file://$PROJECT_DIR$/hwk-2/task-3/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/aaa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/hwk-6/task-1/.gitgnore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!block;n#getTodoList#0;n#TodoApp#0" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/hwk-7/task-1/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
