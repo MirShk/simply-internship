@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7793903-d28f-4d9e-ba48-aa7204e80849" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/task-1/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/task-1/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/task-1/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hwk-7.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-1/backend/db/models/todo.items.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/task-1/backend/db/models/todo.items.model.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,20 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aaa.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="19" column="69" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task-1/client/src/todo.app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="156" column="31" lean-forward="true" selection-start-line="156" selection-start-column="31" selection-end-line="156" selection-end-column="31" />
+            <state relative-caret-position="178">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#getRoot#0;n#TodoApp#0" />
@@ -38,7 +35,6 @@
                 <element signature="n#!!block;n#handleInput#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#handleEdit#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#handleEdit#0;n#TodoApp#0" />
-                <element signature="n#!!block;n#handleDelete#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#componentDidMount#0;n#TodoApp#0" />
                 <element signature="n#!!block;n#render#0;n#TodoApp#0" />
                 <element signature="n#TodoItem#0" />
@@ -50,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task-1/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+            <state relative-caret-position="60">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -80,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task-1/backend/db/models/todo.items.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+            <state relative-caret-position="285">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -109,6 +105,7 @@
       <find>EDit</find>
       <find>Edit</find>
       <find>handleEdit</find>
+      <find>console.lo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,9 +117,9 @@
         <option value="$PROJECT_DIR$/task-1/.env.example" />
         <option value="$PROJECT_DIR$/task-1/.env" />
         <option value="$PROJECT_DIR$/task-1/backend/http/controllers/todos.controller.js" />
+        <option value="$PROJECT_DIR$/task-1/.gitignore" />
         <option value="$PROJECT_DIR$/task-1/backend/db/models/todo.items.model.js" />
         <option value="$PROJECT_DIR$/task-1/client/src/todo.app.js" />
-        <option value="$PROJECT_DIR$/task-1/.gitignore" />
       </list>
     </option>
   </component>
@@ -177,6 +174,7 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/task-1" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -201,23 +199,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564642228694</updated>
-      <workItem from="1564642229861" duration="12426000" />
+      <workItem from="1564642229861" duration="12764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12426000" />
+    <option name="totallyTimeSpent" value="12764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19188192" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24196099" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.34837356" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.35257083" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -273,6 +271,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/task-1/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-53" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task-1/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task-1/backend/db/models/todo.items.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/task-1/backend/routes/api/todos.router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -280,22 +297,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task-1/backend/db/models/todo.items.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task-1/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task-1/client/src/todo.app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="156" column="31" lean-forward="true" selection-start-line="156" selection-start-column="31" selection-end-line="156" selection-end-column="31" />
+        <state relative-caret-position="178">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#TodoApp#0" />
             <element signature="n#!!block;n#getRoot#0;n#TodoApp#0" />
@@ -305,7 +310,6 @@
             <element signature="n#!!block;n#handleInput#0;n#TodoApp#0" />
             <element signature="n#!!block;n#handleEdit#0;n#TodoApp#0" />
             <element signature="n#!!block;n#handleEdit#0;n#TodoApp#0" />
-            <element signature="n#!!block;n#handleDelete#0;n#TodoApp#0" />
             <element signature="n#!!block;n#componentDidMount#0;n#TodoApp#0" />
             <element signature="n#!!block;n#render#0;n#TodoApp#0" />
             <element signature="n#TodoItem#0" />
@@ -313,13 +317,6 @@
             <element signature="n#style#0;n#span#1;n#li#0;n#!!top" expanded="true" />
             <element signature="n#TodoList#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task-1/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>

@@ -105,7 +105,6 @@ class TodoApp {
     }
 
     handleDelete(key) {
-        console.log("handleDelete", key);
         fetch(`${DELETE_TODO_ITEM}/${key}`, {
             method: 'DELETE',
         })
