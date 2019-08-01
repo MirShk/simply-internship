@@ -20,6 +20,7 @@ class TodoApp {
         this.renderEdit = this.renderEdit.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     getRoot() {
@@ -119,30 +120,34 @@ class TodoApp {
         })
     }
 
-    componentDidMount(cb) {
+    componentDidMount(mounted) {
         this.getTodoList()
             .then(response => {
                 this.state.todoList = response;
-                cb(this);
+                mounted();
             });
     }
 
-    render(data, target = this.getRoot()) {
-        const todoList = new TodoList({
-            renderEdit: this.renderEdit,
-            handleDelete: this.handleDelete
-        }).renderList(data);
+    render(data = this.state, target = this.getRoot()) {
+        this.componentDidMount(() => {
+            const todoList = new TodoList({
+                renderEdit: this.renderEdit,
+                handleDelete: this.handleDelete
+            })
+            .renderList(data);
 
-        const todoInput = new TodoInput({
-            handleSubmit: this.handleSubmit,
-            handleInput: this.handleInput,
-            handleEdit: this.handleEdit,
-        }).renderInputContainer(data);
+            const todoInput = new TodoInput({
+                handleSubmit: this.handleSubmit,
+                handleInput: this.handleInput,
+                handleEdit: this.handleEdit,
+            })
+            .renderInputContainer(data);
 
-        target.innerHTML = `
-                                ${todoList}
-                                ${todoInput}
-                           `;
+            target.innerHTML = `
+                                 ${todoList}
+                                 ${todoInput}
+                               `;
+        });
     }
 }
 
@@ -208,11 +213,5 @@ class TodoList extends TodoApp {
 }
 
 
-
-
-
 const todoApp = new TodoApp();
-todoApp
-    .componentDidMount(component => {
-        component.render(component.state);
-    });
+todoApp.render();
