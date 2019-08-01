@@ -153,7 +153,7 @@ class TodoApp {
 
 class TodoInput extends TodoApp {
     constructor(props) {
-        super(props);
+        super();
         this.props = props;
         this.renderInputContainer = this.renderInputContainer.bind(this);
     }
