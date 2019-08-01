@@ -73,12 +73,21 @@ class TodoApp {
     }
 
     renderEdit(key) {
-        this.setState({
-            input: this.state.todoList[key].text,
+        const newState = {
             todoList: [],
             buttonText: 'Edit',
             currentItemId: key
+        };
+        this.state.todoList.map((listItem, index) => {
+            if (listItem.key === key) {
+                key = index;
+                newState.input = this.state.todoList[key].text
+            }
         });
+
+
+
+        this.setState(newState);
     }
 
     handleEdit(key) {
@@ -207,7 +216,7 @@ class TodoList extends TodoApp {
     }
 
     renderList(data) {
-        const list = data.todoList.map((itemData) => new TodoItem(this.props).renderItem(itemData));
+        const list = data.todoList.map((itemData, id) => new TodoItem(this.props).renderItem(itemData, id));
         return `<ul>${list.join('')}</ul>`;
     }
 }
