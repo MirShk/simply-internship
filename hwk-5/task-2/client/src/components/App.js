@@ -82,8 +82,6 @@ class App extends Component {
                 body: JSON.stringify(newItem)
             };
 
-            console.log(newItem);
-
             fetch( `${appEndpoints().EDIT_TODO_ITEM}/${newItem._id}`,reqOptions)
                 .then(() => {
                     return this.fetchTodoList();
