@@ -28,13 +28,13 @@ todoItemSchema.statics.getAllTodoItems = function() {
 };
 
 todoItemSchema.statics.deleteTodoItem = function(itemKey) {
-    return this.remove({key: itemKey});
+    return this.remove({_id: itemKey});
 };
 
 todoItemSchema.statics.editTodoItem = function(itemKey, itemValue) {
     return this.updateOne(
             {
-                key: itemKey
+                _id: itemKey
             },
             {
                 $set: {

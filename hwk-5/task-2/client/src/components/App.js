@@ -9,7 +9,7 @@ class App extends Component {
         super();
         this.state = {
             items: [],
-            currentItem: {text:'', key:''},
+            currentItem: { text: '', _id: '' },
             buttonType : 'Add'
         };
     }
@@ -38,19 +38,18 @@ class App extends Component {
         this.setState({
             currentItem: {
                 text: itemText,
-                key: this.state.currentItem.key
+                _id: this.state.currentItem._id
             }
         })
     };
 
     addItem = (e) => {
         e.preventDefault();
-        const newItem = this.state.currentItem;
-        if (todoItemValidator.validate(newItem.text)) {
-            newItem.key = this.state.items.reduce((prev, current) => (prev.key > current.key) ? prev.key : current.key) + 1;
+        const newItemValue = this.state.currentItem.text;
+        if (todoItemValidator.validate(newItemValue)) {
             const reqOptions = {
                 method: 'POST',
-                body: JSON.stringify(newItem),
+                body: JSON.stringify({text: newItemValue}),
                 headers:{
                     'Content-Type': 'application/json'
                 }
@@ -58,10 +57,12 @@ class App extends Component {
 
             fetch(appEndpoints().ADD_TODO_ITEM, reqOptions)
                 .then(() => {
-                    const items = [...this.state.items, newItem];
+                    return this.fetchTodoList();
+                })
+                .then((todoList) => {
                     this.setState({
-                        items: items,
-                        currentItem: { text: '', key: '' },
+                        items: todoList,
+                        currentItem: { text: '', _id: '' },
                     })
                 });
         } else {
@@ -81,14 +82,16 @@ class App extends Component {
                 body: JSON.stringify(newItem)
             };
 
-            fetch( `${appEndpoints().EDIT_TODO_ITEM}/${newItem.key}`,reqOptions)
+            console.log(newItem);
+
+            fetch( `${appEndpoints().EDIT_TODO_ITEM}/${newItem._id}`,reqOptions)
                 .then(() => {
                     return this.fetchTodoList();
                 })
                 .then((todoList) => {
                     this.setState({
                         items: todoList,
-                        currentItem: {text: '', key: ''},
+                        currentItem: {text: '', _id: ''},
                         buttonType : 'Add'
                     });
                 })
@@ -100,15 +103,15 @@ class App extends Component {
         }
     };
 
-    deleteItem = (key) => {
+    deleteItem = (_id) => {
         const reqOptions = {
             method: 'DELETE'
         };
 
-        fetch(`${appEndpoints().DELETE_TODO_ITEM}/${key}`, reqOptions)
+        fetch(`${appEndpoints().DELETE_TODO_ITEM}/${_id}`, reqOptions)
             .then(() => {
                 const filteredItems = this.state.items.filter(item => {
-                    return item.key !== key
+                    return item._id !== _id
                 });
 
                 this.setState({
@@ -120,11 +123,11 @@ class App extends Component {
             })
     };
 
-    setAppModeToEdit = (key, text) => {
+    setAppModeToEdit = (_id, text) => {
         this.setState({
             currentItem: {
                 text: text,
-                key: key
+                _id: _id
             },
             buttonType: 'Edit'
         });

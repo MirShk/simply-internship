@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c811f358-0043-4492-8e85-22580eb66d10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hwk-7/task-1/backend/db/models/todo.items.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/hwk-7/task-1/backend/db/models/todo.items.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/todos.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/todos.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js" beforeDir="false" afterPath="$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,40 +20,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="-39">
+              <caret line="86" column="28" lean-forward="true" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#TodoApp#0" />
-                <element signature="e#844#899#0" />
-                <element signature="e#920#1207#0" />
-                <element signature="e#2152#2206#0" />
-                <element signature="e#2235#2618#0" />
-                <element signature="e#2477#3164#0" />
-                <element signature="e#3674#3831#0" />
-                <element signature="e#3896#4540#0" />
-                <element signature="n#TodoInput#0" />
-                <element signature="e#4373#5175#0" />
-                <element signature="n#TodoItem#0" />
-                <element signature="n#TodoList#0" />
+                <element signature="e#443#498#0" />
+                <element signature="e#525#812#0" />
+                <element signature="e#840#1262#0" />
+                <element signature="e#1290#2058#0" />
+                <element signature="e#2090#2144#0" />
+                <element signature="e#2584#3413#0" />
+                <element signature="e#3444#3945#0" />
+                <element signature="e#3985#4142#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwk-7/task-1/utils/todo.item.validator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="54" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hwk-7/task-1/backend/db/models/todo.items.model.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -88,8 +67,8 @@
         <option value="$PROJECT_DIR$/hwk-2/task-2/main.js" />
         <option value="$PROJECT_DIR$/hwk-4/task-2/main.js" />
         <option value="$PROJECT_DIR$/hwk-7/task-1/backend/db/models/todo.items.model.js" />
-        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js" />
         <option value="$PROJECT_DIR$/hwk-7/task-1/backend/http/controllers/todos.controller.js" />
+        <option value="$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js" />
       </list>
     </option>
   </component>
@@ -274,32 +253,15 @@
               <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
               <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
               <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
               <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
               <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
               <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simply-internship" type="462c0819:PsiDirectoryNode" />
-              <item name="hwk-7" type="462c0819:PsiDirectoryNode" />
-              <item name="task-1" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="http" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simply-internship" type="b2602c69:ProjectViewProjectNode" />
@@ -318,7 +280,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.2.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/hwk-7" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hwk-5/task-2" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v12.2.0/bin/node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -358,12 +320,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10896000" />
+    <option name="totallyTimeSpent" value="11458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29289618" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.29289618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -376,7 +338,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32948583" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.4362851" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.4827214" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -525,21 +487,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hwk-7/task-1/client/src/todo.app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+        <state relative-caret-position="-39">
+          <caret line="86" column="28" lean-forward="true" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#TodoApp#0" />
-            <element signature="e#844#899#0" />
-            <element signature="e#920#1207#0" />
-            <element signature="e#2152#2206#0" />
-            <element signature="e#2235#2618#0" />
-            <element signature="e#2477#3164#0" />
-            <element signature="e#3674#3831#0" />
-            <element signature="e#3896#4540#0" />
-            <element signature="n#TodoInput#0" />
-            <element signature="e#4373#5175#0" />
-            <element signature="n#TodoItem#0" />
-            <element signature="n#TodoList#0" />
+            <element signature="e#443#498#0" />
+            <element signature="e#525#812#0" />
+            <element signature="e#840#1262#0" />
+            <element signature="e#1290#2058#0" />
+            <element signature="e#2090#2144#0" />
+            <element signature="e#2584#3413#0" />
+            <element signature="e#3444#3945#0" />
+            <element signature="e#3985#4142#0" />
           </folding>
         </state>
       </provider>

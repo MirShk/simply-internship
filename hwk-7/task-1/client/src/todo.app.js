@@ -86,6 +86,7 @@ class TodoApp {
             }
         });
 
+        this.state.rrrrrr= "rrrrrrrrr";
 
         this.setState(newState);
     };

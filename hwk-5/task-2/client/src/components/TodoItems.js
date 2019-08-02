@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 
 class TodoItems extends Component {
-    constructor() {
-        super();
-    }
-
     createTodoItem = (item) => {
         return (
-            <li key={item.key}>
+            <li key={item._id}>
                 {item.text}
                 <span className="todo__item__button" style={{marginLeft: '15px'}}>
-                    <button onClick={() => { this.props.setAppModeToEdit(item.key, item.text) }}>edit</button>
+                    <button onClick={() => { this.props.setAppModeToEdit(item._id, item.text) }}>edit</button>
                 </span>
                 <span className="todo__item__button" style={{marginLeft: '15px'}}>
-                    <button onClick={() => { this.props.deleteItem(item.key) }}>delete</button>
+                    <button onClick={() => { this.props.deleteItem(item._id) }}>delete</button>
                 </span>
             </li>
         )

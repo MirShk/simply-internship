@@ -17,10 +17,10 @@ class IndexController {
 
     deleteTodo(req, res) {
         indexRepository.deleteTodo(req.params.itemKey)
-            .then(resoonse => {
+            .then(response => {
                 res
                     .status(200)
-                    .send(resoonse);
+                    .send(response);
             })
             .catch(err => {
                 res
