@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import TodoList from './TodoList';
 import TodoItems from './TodoItems';
-import axios from 'axios';
 import todoItemValidator from '../../../utils/todo.item.validator'
-import indexRouterEndpoint from '../api-endpoints/index.router.endpoints';
+import appEndpoints from '../api-endpoints/app.endpoints';
 
 class App extends Component {
     constructor() {
@@ -11,40 +10,53 @@ class App extends Component {
         this.state = {
             items: [],
             currentItem: {text:'', key:''},
+            buttonType : 'Add'
         };
-
-        this.handleInput = this.handleInput.bind(this);
-        this.addItem = this.addItem.bind(this);
-        this.deleteItem = this.deleteItem.bind(this);
-        this.editItem = this.editItem.bind(this);
     }
 
-    componentDidMount() {
-        axios.get(indexRouterEndpoint('v1').GET_TODO_LIST)
+    componentDidMount = () => {
+        this.fetchTodoList()
             .then(todoList => {
                 this.setState({
-                   items: todoList.data.length ? todoList.data : []
+                    items: todoList
                 });
             })
             .catch(err => {
                 console.log(err);
             })
+    };
+
+    fetchTodoList() {
+        return fetch(appEndpoints().GET_TODO_LIST)
+            .then((response) => {
+               return response.json();
+            });
     }
 
-    handleInput (e) {
+    handleInput = (e) => {
         const itemText = e.target.value;
-        const currentItem = { text: itemText, key: ''};
         this.setState({
-            currentItem,
+            currentItem: {
+                text: itemText,
+                key: this.state.currentItem.key
+            }
         })
-    }
+    };
 
-    addItem (e) {
+    addItem = (e) => {
         e.preventDefault();
         const newItem = this.state.currentItem;
         if (todoItemValidator.validate(newItem.text)) {
-            newItem.key = this.state.items.length + 1;
-            axios.post(indexRouterEndpoint('v1').ADD_TODO_ITEM, this.state.currentItem)
+            newItem.key = this.state.items.reduce((prev, current) => (prev.key > current.key) ? prev.key : current.key) + 1;
+            const reqOptions = {
+                method: 'POST',
+                body: JSON.stringify(newItem),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            };
+
+            fetch(appEndpoints().ADD_TODO_ITEM, reqOptions)
                 .then(() => {
                     const items = [...this.state.items, newItem];
                     this.setState({
@@ -57,23 +69,43 @@ class App extends Component {
        }
     };
 
-    editItem(e) {
+    editItem = (e) => {
         e.preventDefault();
         const newItem = this.state.currentItem;
         if (todoItemValidator.validate(newItem.text)) {
-            axios.put(window.location, {
-                text: newItem.text
-            })
+            const reqOptions = {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+                body: JSON.stringify(newItem)
+            };
+
+            fetch( `${appEndpoints().EDIT_TODO_ITEM}/${newItem.key}`,reqOptions)
                 .then(() => {
-                    window.location = indexRouterEndpoint('v1').BASE_URL;
+                    return this.fetchTodoList();
+                })
+                .then((todoList) => {
+                    this.setState({
+                        items: todoList,
+                        currentItem: {text: '', key: ''},
+                        buttonType : 'Add'
+                    });
+                })
+                .catch(err => {
+                    console.log(err);
                 })
         } else {
-             alert('Please provide valid input');
+            alert('Please provide valid input');
         }
-    }
+    };
 
-    deleteItem (key) {
-        axios.delete(`${indexRouterEndpoint('v1').DELETE_TODO_ITEM}/${key}`)
+    deleteItem = (key) => {
+        const reqOptions = {
+            method: 'DELETE'
+        };
+
+        fetch(`${appEndpoints().DELETE_TODO_ITEM}/${key}`, reqOptions)
             .then(() => {
                 const filteredItems = this.state.items.filter(item => {
                     return item.key !== key
@@ -86,28 +118,33 @@ class App extends Component {
             .catch(err => {
                 console.log(err)
             })
-    }
+    };
 
-    renderEdit(key) {
-        window.location = `${indexRouterEndpoint('v1').EDIT}/${key}`;
-    }
+    setAppModeToEdit = (key, text) => {
+        this.setState({
+            currentItem: {
+                text: text,
+                key: key
+            },
+            buttonType: 'Edit'
+        });
+    };
 
     render() {
         return (
             <div className="App">
-                <TodoList
-                            addItem={this.addItem}
-                            inputElement={this.inputElement}
-                            handleInput={this.handleInput}
-                            currentItem={this.state.currentItem}
-                            editItem={this.editItem}
+                <TodoList addItem={this.addItem}
+                          inputElement={this.inputElement}
+                          handleInput={this.handleInput}
+                          currentItem={this.state.currentItem}
+                          editItem={this.editItem}
+                          buttonType={this.state.buttonType}
                 />
                 {
-                    window.location.href.indexOf('/edit/') === -1 ?
-                        <TodoItems
-                            entries={this.state.items}
-                            deleteItem={this.deleteItem}
-                            renderEdit={this.renderEdit}
+                    this.state.buttonType === 'Add' ?
+                        <TodoItems entries={this.state.items}
+                                   deleteItem={this.deleteItem}
+                                   setAppModeToEdit={this.setAppModeToEdit}
                         /> : ''
                 }
             </div>

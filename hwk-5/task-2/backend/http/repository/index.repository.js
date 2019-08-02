@@ -1,4 +1,4 @@
-const todoItemsModel = require('../../DB/models/todo.items.model');
+const todoItemsModel = require('../../db/models/todo.items.model');
 
 class IndexRepository {
     addTodo(todoItem) {

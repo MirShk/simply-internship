@@ -1,10 +1,6 @@
 const indexRepository = require('../repository/edit.repository');
 
 class EditController {
-    renderEdit(req, res) {
-        res.render('index.html');
-    }
-
     editTodoItem(req, res) {
         indexRepository.editTodoItem(req.params.itemId, req.body.text)
             .then(response => {
@@ -13,6 +9,8 @@ class EditController {
                     .send(response);
             })
             .catch(err => {
+                console.log(err);
+
                 res
                     .status(400)
                     .send(err);

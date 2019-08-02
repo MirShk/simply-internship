@@ -5,11 +5,10 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv'); dotenv.config();
 const appConfig = require('./config/app.env.config');
-const indexRouter = require('./backend/Routes/api/index.router');
-const editRouter = require('./backend/Routes/api/edit.router');
+const indexRouter = require('./backend/routes/api/index.router');
+const editRouter = require('./backend/routes/api/edit.router');
 const app = express();
 
-//app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'client/src'));
 app.engine('html', require('ejs').renderFile);
 app.use(logger('dev'));
@@ -25,6 +24,8 @@ process.on('unhandledRejection', error => {
     console.log('unhandledRejection', error.message);
 });
 
+
+//todo
 mongoose.connect('mongodb://localhost:27017/todo_app', { useNewUrlParser: true })
     .then(() => {
         console.log("Connected to the mongoDB");
