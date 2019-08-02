@@ -1,4 +1,4 @@
-**Basic sever for getting the list of current directory's files and sub directories**
+**Basic app for getting the list of current directory's files and sub directories**
 
 **USAGE**
 
