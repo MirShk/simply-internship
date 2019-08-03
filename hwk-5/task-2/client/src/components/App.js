@@ -16,14 +16,8 @@ class App extends Component {
 
     componentDidMount = () => {
         this.fetchTodoList()
-            .then(todoList => {
-                this.setState({
-                    items: todoList
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            })
+            .then(todoList => { this.setState({ items: todoList }); })
+            .catch(err => console.log(err));
     };
 
     fetchTodoList() {
@@ -56,9 +50,7 @@ class App extends Component {
             };
 
             fetch(appEndpoints().ADD_TODO_ITEM, reqOptions)
-                .then(() => {
-                    return this.fetchTodoList();
-                })
+                .then(() => this.fetchTodoList())
                 .then((todoList) => {
                     this.setState({
                         items: todoList,
@@ -83,9 +75,7 @@ class App extends Component {
             };
 
             fetch( `${appEndpoints().EDIT_TODO_ITEM}/${newItem._id}`,reqOptions)
-                .then(() => {
-                    return this.fetchTodoList();
-                })
+                .then(() => this.fetchTodoList())
                 .then((todoList) => {
                     this.setState({
                         items: todoList,
@@ -93,9 +83,7 @@ class App extends Component {
                         buttonType : 'Add'
                     });
                 })
-                .catch(err => {
-                    console.log(err);
-                })
+                .catch(err => console.log(err));
         } else {
             alert('Please provide valid input');
         }
@@ -107,18 +95,9 @@ class App extends Component {
         };
 
         fetch(`${appEndpoints().DELETE_TODO_ITEM}/${_id}`, reqOptions)
-            .then(() => {
-                const filteredItems = this.state.items.filter(item => {
-                    return item._id !== _id
-                });
-
-                this.setState({
-                    items: filteredItems,
-                })
-            })
-            .catch(err => {
-                console.log(err)
-            })
+            .then(() => this.fetchTodoList())
+            .then(newTodoList => { this.setState({items: newTodoList}); })
+            .catch(err => console.log(err));
     };
 
     setAppModeToEdit = (_id, text) => {
@@ -134,18 +113,17 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <TodoList addItem={this.addItem}
-                          inputElement={this.inputElement}
-                          handleInput={this.handleInput}
-                          currentItem={this.state.currentItem}
-                          editItem={this.editItem}
-                          buttonType={this.state.buttonType}
+                <TodoList addItem     = {this.addItem}
+                          handleInput = {this.handleInput}
+                          currentItem = {this.state.currentItem}
+                          editItem    = {this.editItem}
+                          buttonType  = {this.state.buttonType}
                 />
                 {
                     this.state.buttonType === 'Add' ?
-                        <TodoItems entries={this.state.items}
-                                   deleteItem={this.deleteItem}
-                                   setAppModeToEdit={this.setAppModeToEdit}
+                        <TodoItems entries          = {this.state.items}
+                                   setAppModeToEdit = {this.setAppModeToEdit}
+                                   deleteItem       = {this.deleteItem}
                         /> : ''
                 }
             </div>
