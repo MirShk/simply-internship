@@ -1,16 +1,21 @@
 import React, { Component } from 'react'
 import TodoList from './TodoList';
 import TodoItem from './TodoItem';
-import todoItemValidator from '../../../utils/todo.item.validator'
+import todoItemValidator from '../../../utils/todo.item.validator';
 import appEndpoints from '../api-endpoints/app.endpoints';
 
-class App extends Component {
+
+export default class App extends Component {
     constructor() {
         super();
+        this.inputObj = { ref: '' };
         this.state = {
             items: [],
-            currentItem: { text: '', _id: '', completed: false },
-            buttonType : 'Add'
+            currentItem: {
+                _id: '',
+                completed: false
+            },
+            buttonType: 'Add'
         };
     }
 
@@ -20,6 +25,8 @@ class App extends Component {
             .catch(err => console.log(err));
     };
 
+
+    //store's initial state
     fetchTodoList() {
         return fetch(appEndpoints().GET_TODO_LIST)
             .then((response) => {
@@ -27,26 +34,11 @@ class App extends Component {
             });
     }
 
-
-
-    handleInput = (e) => {
-        const itemText = e.target.value;
-        this.setState({
-            currentItem: {
-                ...this.state.currentItem,
-                text: itemText,
-                _id: this.state.currentItem._id
-            }
-        })
-    };
-
     addItem = (e) => {
         e.preventDefault();
-        const newItem = this.state.currentItem;
-        //todo :: validate
         const reqOptions = {
             method: 'POST',
-            body: JSON.stringify({ text: newItem.text, completed: newItem.completed }),
+            body: JSON.stringify({ text: this.inputObj.ref.value, completed: false }),
             headers:{
                 'Content-Type': 'application/json'
             }
@@ -54,25 +46,27 @@ class App extends Component {
 
         fetch(appEndpoints().ADD_TODO_ITEM, reqOptions)
             .then(() => this.fetchTodoList())
-            .then((todoList) => {
+            .then((newTodoList) => {
+                this.inputObj.ref.value = '';
                 this.setState({
-                    items: todoList,
+                    items: newTodoList,
                     currentItem: {
                         ...this.state.currentItem,
-                        text: '',
                         _id: ''
                     },
                 })
             });
     };
 
-    editItem = (e, newItem) => {
-        if (newItem === undefined) {
+    updateItem = (e, newItem) => {
+        if (e) {
             e.preventDefault();
-            newItem = this.state.currentItem;
+            newItem = {
+                _id: this.state.currentItem._id,
+                text: this.inputObj.ref.value
+            };
         }
 
-        //todo :: validate
         const reqOptions = {
             method: 'PUT',
             headers: {
@@ -82,12 +76,10 @@ class App extends Component {
         };
         fetch( `${appEndpoints().EDIT_TODO_ITEM}/${newItem._id}`,reqOptions)
             .then(() => this.fetchTodoList())
-            .then(todoList => {
+            .then(newTodoList => {
                 this.setState({
-                    items: todoList,
+                    items: newTodoList,
                     currentItem: {
-                        ...this.state.currentItem,
-                        text: '',
                         _id: ''
                     },
                     buttonType : 'Add'
@@ -100,7 +92,6 @@ class App extends Component {
         const reqOptions = {
             method: 'DELETE'
         };
-
         fetch(`${appEndpoints().DELETE_TODO_ITEM}/${_id}`, reqOptions)
             .then(() => this.fetchTodoList())
             .then(newTodoList => { this.setState({items: newTodoList}); })
@@ -108,10 +99,10 @@ class App extends Component {
     };
 
     setAppModeToEdit = (_id, text) => {
+        this.inputObj.ref.value = text;
         this.setState({
             currentItem: {
-                ...this.state.currentItem,
-                text: text,
+                completed: false,
                 _id: _id
             },
             buttonType: 'Edit'
@@ -122,21 +113,19 @@ class App extends Component {
         return (
             <div className="App">
                 <TodoList addItem     = {this.addItem}
-                          handleInput = {this.handleInput}
-                          currentItem = {this.state.currentItem}
-                          editItem    = {this.editItem}
+                          updateItem  = {this.updateItem}
                           buttonType  = {this.state.buttonType}
+                          input       = {this.inputObj}
                 />
                 {
                     this.state.buttonType === 'Add' ?
                         <TodoItem entries          = {this.state.items}
                                   setAppModeToEdit = {this.setAppModeToEdit}
                                   deleteItem       = {this.deleteItem}
-                                  editItem         = {this.editItem}
+                                  updateItem       = {this.updateItem }
                         /> : ''
                 }
             </div>
         )
     }
 }
-export default App
