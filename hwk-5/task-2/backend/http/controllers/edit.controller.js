@@ -2,7 +2,7 @@ const indexRepository = require('../repository/edit.repository');
 
 class EditController {
     editTodoItem(req, res) {
-        indexRepository.editTodoItem(req.params.itemId, req.body.text)
+        indexRepository.editTodoItem(req.params.itemId, req.body)
             .then(response => {
                 res
                     .status(200)

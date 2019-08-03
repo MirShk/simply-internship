@@ -6,9 +6,9 @@ class TodoList extends Component {
             <div className="todo__list">
                 <div className="todo__list__header">
                     <form onSubmit={this.props.buttonType === 'Edit' ? this.props.editItem : this.props.addItem}>
-                        <input placeholder="Task"
-                               value={this.props.currentItem.text}
-                               onChange={this.props.handleInput}
+                        <input placeholder = "Task"
+                               value       = {this.props.currentItem.text}
+                               onChange    = {this.props.handleInput}
                         />
                         <button type="submit"> {this.props.buttonType} </button>
                     </form>

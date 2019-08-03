@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TodoList from './TodoList';
-import TodoItems from './TodoItems';
+import TodoItem from './TodoItem';
 import todoItemValidator from '../../../utils/todo.item.validator'
 import appEndpoints from '../api-endpoints/app.endpoints';
 
@@ -9,7 +9,7 @@ class App extends Component {
         super();
         this.state = {
             items: [],
-            currentItem: { text: '', _id: '' },
+            currentItem: { text: '', _id: '', completed: false },
             buttonType : 'Add'
         };
     }
@@ -27,10 +27,13 @@ class App extends Component {
             });
     }
 
+
+
     handleInput = (e) => {
         const itemText = e.target.value;
         this.setState({
             currentItem: {
+                ...this.state.currentItem,
                 text: itemText,
                 _id: this.state.currentItem._id
             }
@@ -39,54 +42,58 @@ class App extends Component {
 
     addItem = (e) => {
         e.preventDefault();
-        const newItemValue = this.state.currentItem.text;
-        if (todoItemValidator.validate(newItemValue)) {
-            const reqOptions = {
-                method: 'POST',
-                body: JSON.stringify({text: newItemValue}),
-                headers:{
-                    'Content-Type': 'application/json'
-                }
-            };
+        const newItem = this.state.currentItem;
+        //todo :: validate
+        const reqOptions = {
+            method: 'POST',
+            body: JSON.stringify({ text: newItem.text, completed: newItem.completed }),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        };
 
-            fetch(appEndpoints().ADD_TODO_ITEM, reqOptions)
-                .then(() => this.fetchTodoList())
-                .then((todoList) => {
-                    this.setState({
-                        items: todoList,
-                        currentItem: { text: '', _id: '' },
-                    })
-                });
-        } else {
-            alert('Please provide valid input');
-       }
+        fetch(appEndpoints().ADD_TODO_ITEM, reqOptions)
+            .then(() => this.fetchTodoList())
+            .then((todoList) => {
+                this.setState({
+                    items: todoList,
+                    currentItem: {
+                        ...this.state.currentItem,
+                        text: '',
+                        _id: ''
+                    },
+                })
+            });
     };
 
-    editItem = (e) => {
-        e.preventDefault();
-        const newItem = this.state.currentItem;
-        if (todoItemValidator.validate(newItem.text)) {
-            const reqOptions = {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8'
-                },
-                body: JSON.stringify(newItem)
-            };
-
-            fetch( `${appEndpoints().EDIT_TODO_ITEM}/${newItem._id}`,reqOptions)
-                .then(() => this.fetchTodoList())
-                .then((todoList) => {
-                    this.setState({
-                        items: todoList,
-                        currentItem: {text: '', _id: ''},
-                        buttonType : 'Add'
-                    });
-                })
-                .catch(err => console.log(err));
-        } else {
-            alert('Please provide valid input');
+    editItem = (e, newItem) => {
+        if (newItem === undefined) {
+            e.preventDefault();
+            newItem = this.state.currentItem;
         }
+
+        //todo :: validate
+        const reqOptions = {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            },
+            body: JSON.stringify(newItem)
+        };
+        fetch( `${appEndpoints().EDIT_TODO_ITEM}/${newItem._id}`,reqOptions)
+            .then(() => this.fetchTodoList())
+            .then(todoList => {
+                this.setState({
+                    items: todoList,
+                    currentItem: {
+                        ...this.state.currentItem,
+                        text: '',
+                        _id: ''
+                    },
+                    buttonType : 'Add'
+                });
+            })
+            .catch(err => console.log(err));
     };
 
     deleteItem = (_id) => {
@@ -103,6 +110,7 @@ class App extends Component {
     setAppModeToEdit = (_id, text) => {
         this.setState({
             currentItem: {
+                ...this.state.currentItem,
                 text: text,
                 _id: _id
             },
@@ -121,9 +129,10 @@ class App extends Component {
                 />
                 {
                     this.state.buttonType === 'Add' ?
-                        <TodoItems entries          = {this.state.items}
-                                   setAppModeToEdit = {this.setAppModeToEdit}
-                                   deleteItem       = {this.deleteItem}
+                        <TodoItem entries          = {this.state.items}
+                                  setAppModeToEdit = {this.setAppModeToEdit}
+                                  deleteItem       = {this.deleteItem}
+                                  editItem         = {this.editItem}
                         /> : ''
                 }
             </div>
