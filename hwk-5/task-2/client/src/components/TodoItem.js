@@ -1,39 +1,31 @@
 import React, { Component } from 'react';
-import appEndpoints from '../api-endpoints/app.endpoints';
 
-class TodoItem extends Component {
-    createTodoItem = (item) => {
+export default class TodoItem extends Component {
+    render() {
         return (
-            <li className='todo__list__item' key={item._id} style={{textDecoration: item.completed ? 'line-through' : 'none' }}>
-                {item.text}
+            <li className='todo__list__item' style={{textDecoration: this.props.item.completed ? 'line-through' : 'none' }}>
+                {this.props.item.text}
                 <span className="todo__list__item__button edit" style={{marginLeft: '15px'}}>
-                    <button onClick={() => { this.props.setAppModeToEdit(item._id, item.text) }}>Edit</button>
+                    <button onClick={() => { this.props.setAppModeToEdit(this.props.item._id, this.props.item.text, this.props.input.ref) }}>Edit</button>
                 </span>
                 <span className="todo__list__item__button change-status" style={{marginLeft: '15px'}}>
                     <button onClick={
                         () => {
                             const newItem = {
-                                _id: item._id,
-                                completed: !item.completed
+                                _id: this.props.item._id,
+                                completed: !this.props.item.completed
                             };
 
                             this.props.updateItem(null, newItem)
                         }
                     }>
-                        {item.completed ? 'Undo' : 'Complete' }
+                        { this.props.item.completed ? 'Undo' : 'Complete' }
                     </button>
                 </span>
                 <span className="todo__list__item__button delete" style={{marginLeft: '15px'}}>
-                    <button onClick={() => { this.props.deleteItem(item._id) }}>Delete</button>
+                    <button onClick={() => { this.props.deleteItem(this.props.item._id) }}>Delete</button>
                 </span>
             </li>
         )
-    };
-
-    render() {
-        const todoEntries = this.props.entries;
-        const listItems = todoEntries.map(this.createTodoItem);
-        return <ul className="todo__list">{listItems}</ul>
     }
 }
-export default TodoItem

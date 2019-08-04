@@ -28,12 +28,10 @@ todoItemSchema.statics.getAllTodoItems = function() {
 };
 
 todoItemSchema.statics.deleteTodoItem = function(itemKey) {
-    return this.remove({_id: itemKey});
+    return this.deleteOne({_id: itemKey});
 };
 
 todoItemSchema.statics.editTodoItem = function(itemKey, editableFields) {
-    console.log(editableFields);
-
     return this.updateOne(
         {
             _id: itemKey

@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
+import TodoItem from '../containers/todoItemContainer';
 
-export default class TodoList extends Component {
+class TodoList extends Component {
+
     render() {
-        return (
-            <div className="todo__form">
-                <form onSubmit={this.props.buttonType === 'Edit' ? this.props.updateItem : this.props.addItem}>
-                    <input placeholder  = "Task"
-                           defaultValue = {this.props.input.ref.value}
-                           ref          = {input => this.props.input.ref = input}
-                    />
-                    <button type="submit"> {this.props.buttonType} </button>
-                </form>
-            </div>
-        )
+        const todoEntries = this.props.entries;
+        const listItems = todoEntries.map(item => {
+            return <TodoItem item = {item} key = {item._id} />;
+        });
+
+        return <ul className="todo__list">{listItems}</ul>
     }
 }
+export default TodoList
