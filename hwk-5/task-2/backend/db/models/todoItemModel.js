@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const todoItemValidator = require('../../../utils/todo.item.validator');
 
 const todoItemSchema = new Schema({
     text : String,
@@ -8,17 +7,17 @@ const todoItemSchema = new Schema({
 });
 
 todoItemSchema.pre('save', function(next) {
-    if (todoItemValidator.validate(this.text)) {
-        next();
-    } else {
+    if (!this.text.replace(/\s/g, '').length) {
         next({message: 'todo item validation is failed'});
+    } else {
+        next();
     }
 });
 
 todoItemSchema.pre('updateOne', function(next) {
     if (
-        this._update.$set.hasOwnProperty('text') &&
-        !todoItemValidator.validate(this._update.$set.text)
+        this._update.$set.text &&
+        !this._update.$set.text.replace(/\s/g, '').length
     ) {
         next({message: 'todo item validation is failed'});
     }

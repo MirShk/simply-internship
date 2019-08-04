@@ -21,6 +21,7 @@ export const updateItem = () => {
         if (e) {
             e.preventDefault();
             ref = refactoredItem.inputObj.ref;
+            if (!ref.value.replace(/\s/g, '').length) return;
             refactoredItem = {
                 _id: refactoredItem.currentItem._id,
                 text: refactoredItem.inputObj.ref.value
