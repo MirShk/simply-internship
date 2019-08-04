@@ -1,4 +1,4 @@
-const indexRepository = require('../repository/edit.repository');
+const indexRepository = require('../repository/editRepository');
 
 class EditController {
     editTodoItem(req, res) {

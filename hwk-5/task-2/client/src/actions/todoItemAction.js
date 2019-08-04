@@ -1,4 +1,4 @@
-import appEndpoints from '../api-endpoints/app.endpoints';
+import appEndpoints from '../api-endpoints/appEndpoints';
 import { fetchTodoList } from '../helper';
 
 export const deleteItem = () => {

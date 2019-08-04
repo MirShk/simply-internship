@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv'); dotenv.config();
 const appConfig = require('./config/app.env.config');
-const indexRouter = require('./backend/routes/api/index.router');
-const editRouter = require('./backend/routes/api/edit.router');
+const indexRouter = require('./backend/routes/api/indexRouter');
+const editRouter = require('./backend/routes/api/editRouter');
 const app = express();
 
 app.set('views', path.join(__dirname, 'client/src'));

@@ -7,21 +7,24 @@ const todoItemSchema = new Schema({
     completed: Boolean
 });
 
-// todoItemSchema.pre('save', function(next) {
-//     if (todoItemValidator.validate(this.text)) {
-//         next();
-//     } else {
-//         next({message: 'todo item validation is failed'});
-//     }
-// });
-//
-// todoItemSchema.pre('updateOne', function(next) {
-//     if (todoItemValidator.validate(this._update.$set.text)) {
-//         next();
-//     } else {
-//         next({message: 'todo item validation is failed'});
-//     }
-// });
+todoItemSchema.pre('save', function(next) {
+    if (todoItemValidator.validate(this.text)) {
+        next();
+    } else {
+        next({message: 'todo item validation is failed'});
+    }
+});
+
+todoItemSchema.pre('updateOne', function(next) {
+    if (
+        this._update.$set.hasOwnProperty('text') &&
+        !todoItemValidator.validate(this._update.$set.text)
+    ) {
+        next({message: 'todo item validation is failed'});
+    }
+
+    next();
+});
 
 todoItemSchema.statics.getAllTodoItems = function() {
     return this.find();

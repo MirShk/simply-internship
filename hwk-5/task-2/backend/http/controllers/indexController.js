@@ -1,4 +1,4 @@
-const indexRepository = require('../repository/index.repository');
+const indexRepository = require('../repository/indexRepository');
 
 class IndexController {
     addTodo(req, res) {

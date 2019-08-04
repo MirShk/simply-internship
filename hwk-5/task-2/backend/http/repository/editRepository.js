@@ -1,4 +1,4 @@
-const todoItemsModel = require('../../db/models/todo.items.model');
+const todoItemsModel = require('../../db/models/todoItemModel');
 
 class EditRepository {
     editTodoItem(key, reqBody) {

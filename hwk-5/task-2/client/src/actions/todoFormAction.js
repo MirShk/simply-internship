@@ -1,11 +1,9 @@
-import appEndpoints from "../api-endpoints/app.endpoints";
-import {fetchTodoList} from "../helper";
+import appEndpoints from "../api-endpoints/appEndpoints";
+import { fetchTodoList } from "../helper";
 
 export const addItem = () => {
     return function (dispatch, e, newItemRef) {
         e.preventDefault();
-        console.log(newItemRef.value);
-
         const reqOptions = {
             method: 'POST',
             body: JSON.stringify({

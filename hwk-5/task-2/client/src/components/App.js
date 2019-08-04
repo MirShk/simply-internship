@@ -7,9 +7,7 @@ export default class App extends Component {
         return (
             <div className="App">
                 <TodoForm />
-                {
-                    this.props.buttonType === 'Add' ?  <TodoList /> : ''
-                }
+                { this.props.buttonType === 'Add' ?  <TodoList /> : '' }
             </div>
         )
     }

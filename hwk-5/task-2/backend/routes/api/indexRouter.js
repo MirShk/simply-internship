@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const indexController = require('../../http/controllers/index.controller');
+const indexController = require('../../http/controllers/indexController');
 
 module.exports = (app_v = 'v1') => {
     const baseUrl = `/api/${app_v}`;

@@ -1,23 +1,20 @@
-const initialState = {
-    inputObj : { ref: '' },
-    items: [],
-    currentItem: {
-        _id: '',
-        completed: false
-    },
-    buttonType: 'Add'
-};
+import { initialStatePattern } from '../helper';
+import {
+    ADD_ITEM,
+    SET_APP_MODE_TO_EDIT,
+    SET_APP_MODE_TO_ADD
+} from '../helper/constants';
 
-function todoFormReducer(state = initialState, action) {
+function todoFormReducer(state = initialStatePattern(), action) {
     switch (action.type) {
-        case 'ADD_ITEM': {
+        case ADD_ITEM: {
             action.ref.value = '';
             return {
                 ...state,
                 inputObj: {ref: action.ref},
             };
         }
-        case 'SET_APP_MODE_TO_EDIT': {
+        case SET_APP_MODE_TO_EDIT: {
             action.ref.value = action.text;
             return {
                 ...state,
@@ -27,7 +24,7 @@ function todoFormReducer(state = initialState, action) {
                 buttonType : 'Edit'
             };
         }
-        case 'SET_APP_MODE_TO_ADD': {
+        case SET_APP_MODE_TO_ADD: {
             action.ref.value = '';
             return {
                 ...state,
