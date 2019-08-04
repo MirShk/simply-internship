@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { createStore, applyMiddleware } from 'redux';
 import Wrapper from './components/Wrapper';
 import indexReducer from './reducers/indexReducer';
-import {fetchTodoList} from './helper/index';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { fetchTodoList } from './helper/index';
 
 const store = createStore(indexReducer, applyMiddleware(thunk));
 export async function asyncRenderDOM() {

@@ -39,7 +39,10 @@ export const updateItem = () => {
                 return fetchTodoList();
             })
             .then(newTodoList => {
-                if (e) dispatch({ type: 'SET_APP_MODE_TO_ADD', ref });
+                if (e) {
+                    ref.value = '';
+                    dispatch({ type: 'SET_APP_MODE_TO_ADD', ref });
+                }
                 dispatch({ type: 'STORE_DATA_FROM_SERVER', items: newTodoList});
             })
             .catch(err => console.log(err));

@@ -18,7 +18,7 @@ export const addItem = () => {
         return fetch(appEndpoints().ADD_TODO_ITEM, reqOptions)
             .then(() => fetchTodoList())
             .then(newTodoList => {
-                dispatch({ type: 'ADD_ITEM', ref: newItemRef});
+                newItemRef.value = '';
                 dispatch({ type: 'STORE_DATA_FROM_SERVER', items: newTodoList });
             });
     }
