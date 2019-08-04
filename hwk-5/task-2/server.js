@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require('dotenv'); dotenv.config();
-const appConfig = require('./config/app.env.config');
+const appConfig = require('./config/appEnvConfigs');
 const indexRouter = require('./backend/routes/api/indexRouter');
 const editRouter = require('./backend/routes/api/editRouter');
 const app = express();
@@ -24,16 +24,10 @@ process.on('unhandledRejection', error => {
     console.log('unhandledRejection', error.message);
 });
 
-
-//todo
-mongoose.connect('mongodb://localhost:27017/todo_app', { useNewUrlParser: true })
+mongoose.connect(`mongodb://${appConfig.server.host}:${appConfig.db.port}/${appConfig.db.name}`, { useNewUrlParser: true })
     .then(() => {
         console.log("Connected to the mongoDB");
-        app.listen(appConfig.server.port, () => {
-            console.log(`The server is running on ${appConfig.server.port} port`);
-        });
+        app.listen(appConfig.server.port, () => console.log(`The server is running on ${appConfig.server.port} port`))
     })
-    .catch(err => {
-        throw err;
-    });
+    .catch(err => { throw err });
 

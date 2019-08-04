@@ -1,4 +1,4 @@
-const appConfig = require('../../../config/app.env.config');
+const appConfig = require('../../../config/appEnvConfigs');
 
 module.exports = (app_v = appConfig.versioning.app_version) => {
     const BASE_URL = `http://localhost:${appConfig.server.port}/api/${app_v}`;
