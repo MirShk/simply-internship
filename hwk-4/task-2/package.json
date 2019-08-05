@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "promisify-mirshk": "^1.4.0"
+    "promisify-mirshk": "1.4.0"
   }
 }
