@@ -39,7 +39,12 @@ class FileSystem {
         }
     }
 
-    async displayFileHierarchy(iterable) {
+    /**
+     *
+     * @param iterable
+     * @returns {Promise<void>}
+     */
+    async displayFileHierarchy(iterable = this.readFiles(__dirname)) {
         const paths = [];
         try {
             for await (const it of iterable) this.mode === 'tree' ? console.log(it) : paths.push(it);
@@ -53,9 +58,7 @@ class FileSystem {
 const fileSystem = new FileSystem();
 fileSystem
         .setDisplayMode('tree')
-        .displayFileHierarchy(
-            fileSystem.readFiles(__dirname)
-        );
+        .displayFileHierarchy(); // .displayFileHierarchy(this.readFiles(`${dirName}`)
 
 
 
