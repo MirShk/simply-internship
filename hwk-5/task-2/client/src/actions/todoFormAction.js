@@ -1,4 +1,7 @@
 import appEndpoints from "../api-endpoints/appEndpoints";
+import {
+    STORE_DATA_FROM_SERVER,
+} from '../helper/constants';
 import { fetchTodoList } from "../helper";
 
 export const addItem = () => {
@@ -20,7 +23,7 @@ export const addItem = () => {
                 .then(() => fetchTodoList())
                 .then(newTodoList => {
                     newItemRef.value = '';
-                    dispatch({ type: 'STORE_DATA_FROM_SERVER', items: newTodoList });
+                    dispatch({ type: STORE_DATA_FROM_SERVER, items: newTodoList });
                 });
         }
     }

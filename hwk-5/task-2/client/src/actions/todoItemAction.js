@@ -1,4 +1,8 @@
 import appEndpoints from '../api-endpoints/appEndpoints';
+import {
+    STORE_DATA_FROM_SERVER,
+    SET_APP_MODE_TO_ADD
+} from '../helper/constants';
 import { fetchTodoList } from '../helper';
 
 export const deleteItem = () => {
@@ -9,7 +13,7 @@ export const deleteItem = () => {
         return fetch(`${appEndpoints().DELETE_TODO_ITEM}/${_id}`, reqOptions)
             .then(() => fetchTodoList())
             .then(newTodoList => {
-                dispatch({ type: 'STORE_DATA_FROM_SERVER', items: newTodoList});
+                dispatch({ type: STORE_DATA_FROM_SERVER, items: newTodoList});
             })
             .catch(err => console.log(err));
     }
@@ -42,9 +46,9 @@ export const updateItem = () => {
             .then(newTodoList => {
                 if (e) {
                     ref.value = '';
-                    dispatch({ type: 'SET_APP_MODE_TO_ADD', ref });
+                    dispatch({ type: SET_APP_MODE_TO_ADD, ref });
                 }
-                dispatch({ type: 'STORE_DATA_FROM_SERVER', items: newTodoList});
+                dispatch({ type: STORE_DATA_FROM_SERVER, items: newTodoList});
             })
             .catch(err => console.log(err));
     }
