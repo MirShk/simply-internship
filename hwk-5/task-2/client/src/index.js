@@ -16,7 +16,7 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-async function asyncRenderDOM() {
+async function initTodoListByServer() {
     try {
         const items = await fetchTodoList();
         store.dispatch({type: 'STORE_DATA_FROM_SERVER', items});
@@ -25,6 +25,6 @@ async function asyncRenderDOM() {
     }
 }
 
-asyncRenderDOM();
+initTodoListByServer();
 
 
