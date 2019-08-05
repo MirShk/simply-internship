@@ -1,8 +1,7 @@
 import appEndpoints from "../api-endpoints/appEndpoints";
 import {
-    STORE_DATA_FROM_SERVER,
+    ADD_ITEM,
 } from '../helper/constants';
-import { fetchTodoList } from "../helper";
 
 export const addItem = () => {
     return function (dispatch, e, newItemRef) {
@@ -20,11 +19,13 @@ export const addItem = () => {
             };
 
             return fetch(appEndpoints().ADD_TODO_ITEM, reqOptions)
-                .then(() => fetchTodoList())
-                .then(newTodoList => {
+                .then(response => {
+                    return response.json();
+                })
+                .then(newItem => {
                     newItemRef.value = '';
-                    dispatch({ type: STORE_DATA_FROM_SERVER, items: newTodoList });
-                });
+                    dispatch({ type: ADD_ITEM, newItem});
+                })
         }
     }
 };

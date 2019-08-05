@@ -12,6 +12,7 @@ export const initialStatePattern = () => {
         inputObj : { ref: '' },
         items: [],
         currentItem: {
+            text: '',
             _id: '',
             completed: false
         },

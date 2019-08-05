@@ -4,5 +4,5 @@ import todoForm from './todoFormReducer';
 
 export default combineReducers({
     restoreInitialState: restoreStateReducer,
-    todoForm
+    todoForm,
 });

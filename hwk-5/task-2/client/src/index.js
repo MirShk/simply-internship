@@ -7,20 +7,24 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { fetchTodoList } from './helper/index';
 
+
 const store = createStore(indexReducer, applyMiddleware(thunk));
-export async function asyncRenderDOM() {
-    const items = await fetchTodoList();
-    store.dispatch({type: 'STORE_DATA_FROM_SERVER', items});
-    ReactDOM.render(
-        <Provider store={store}>
-            <Wrapper/>
-        </Provider>,
-        document.getElementById('root')
-    );
+ReactDOM.render(
+    <Provider store={store}>
+        <Wrapper/>
+    </Provider>,
+    document.getElementById('root')
+);
+
+async function asyncRenderDOM() {
+    try {
+        const items = await fetchTodoList();
+        store.dispatch({type: 'STORE_DATA_FROM_SERVER', items});
+    } catch(error) {
+        console.log(error);
+    }
 }
 
-asyncRenderDOM()
-    .then(() => console.log("DOM has asynchronously been rendered successfully!"))
-    .catch(err => new Error(err));
+asyncRenderDOM();
 
 

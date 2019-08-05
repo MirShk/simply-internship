@@ -1,7 +1,7 @@
 import { initialStatePattern } from '../helper';
 import {
     SET_APP_MODE_TO_EDIT,
-    SET_APP_MODE_TO_ADD
+    SET_APP_MODE_TO_ADD,
 } from '../helper/constants';
 
 const initialState = {
