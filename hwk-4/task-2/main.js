@@ -5,7 +5,7 @@ class FileSystem {
     constructor() {
         this.readdirSync = promisify(fs.readdir);
         this.decorator = "-------";
-        this.modeIsTree = false;
+        this.mode = 'path';
     }
 
     async * readFiles(dirName, fileHierarchyDepth = 0) {
@@ -13,10 +13,10 @@ class FileSystem {
          for (const subFile of subFiles) {
              const decoratorLength = this.decorator.repeat(fileHierarchyDepth);
              if (subFile.isDirectory()) {
-                 yield this.modeIsTree ? `${decoratorLength}|__ ${subFile.name}` : `${dirName}/${subFile.name}`;
+                 yield this.mode === 'tree' ? `${decoratorLength}|__ ${subFile.name}` : `${dirName}/${subFile.name}`;
                  yield *this.readFiles(`${dirName}/${subFile.name}`, fileHierarchyDepth + 1);
              } else {
-                 yield this.modeIsTree ? `${decoratorLength}|__/ ${subFile.name}` : `${dirName}/${subFile.name}`;
+                 yield this.mode === 'tree' ? `${decoratorLength}|__/ ${subFile.name}` : `${dirName}/${subFile.name}`;
              }
          }
     }
@@ -24,16 +24,17 @@ class FileSystem {
     /**
      *
      * @param mode
-     * @desc If the value of 'mode' param is true,
+     * @desc If the value of 'mode' param is 'tree',
      * the 'displayFileHierarchy' method will display file hierarchy tree,
-     * else will display an array of file paths.
+     * If the value of 'mode' param is 'path'(optional), the 'displayFileHierarchy' method
+     * will display  an array of file paths.
      * @returns {FileSystem}
      */
     setDisplayMode(mode) {
-        if (typeof mode !== "boolean") {
-            throw new Error("FileStructure::setMode method receives only @boolean type argument!");
+        if (typeof mode !== "string") {
+            throw new Error("FileStructure::setMode method receives only @string type argument!");
         } else {
-            this.modeIsTree = mode;
+            this.mode = mode;
             return this;
         }
     }
@@ -41,8 +42,8 @@ class FileSystem {
     async displayFileHierarchy(iterable) {
         const paths = [];
         try {
-            for await (const it of iterable) this.modeIsTree ? console.log(it) : paths.push(it);
-            if (!this.modeIsTree) console.log(paths)
+            for await (const it of iterable) this.mode === 'tree' ? console.log(it) : paths.push(it);
+            if (this.mode !== 'tree') console.log(paths)
         } catch (e) {
             console.log(e);
         }
@@ -51,7 +52,7 @@ class FileSystem {
 
 const fileSystem = new FileSystem();
 fileSystem
-        .setDisplayMode(true)
+        .setDisplayMode('tree')
         .displayFileHierarchy(
             fileSystem.readFiles(__dirname)
         );
