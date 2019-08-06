@@ -1,4 +1,4 @@
-**Simple React/Redux Todo App**
+**Simple React/Redux/MongoDB Todo App**
 
 **CLI**
 
